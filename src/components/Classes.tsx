@@ -1,12 +1,13 @@
-import { useEffect, useRef, useState } from "react";
-
+import advanced from "../assets/advanced.jpg";
+import webdev from "../assets/webdev.jpg";
+import intermediate from "../assets/intermediate.jpg"
+import beginner from "../assets/beginner.jpg";
 export default function Classes() {
-  const [activeCourse, setActiveCourse] = useState(0);
-  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const courses = [
     {
       title: "Junior Course",
+      img: beginner,
       level: "Beginner",
       duration: "12 weeks",
       schedule: "Saturdays, 4:00 PM to 5:30 PM EST",
@@ -30,6 +31,7 @@ export default function Classes() {
     },
     {
       title: "Intermediate Course",
+      img: intermediate,
       level: "Intermediate",
       duration: "Runs until February 2026",
       schedule: "Sundays, 8:00 PM to 9:30 PM EST",
@@ -54,6 +56,7 @@ export default function Classes() {
     },
     {
       title: "Senior Course",
+      img: advanced,
       level: "Advanced",
       duration: "Runs until February 2026",
       schedule: "Wednesdays, 8:00 PM to 9:30 PM EST",
@@ -76,6 +79,7 @@ export default function Classes() {
     },
     {
       title: "Web Development Course",
+      img: webdev,
       level: "All",
       duration: "Runs until February 2026",
       schedule: "Saturdays, 8:00 PM to 9:30 PM EST",
@@ -83,40 +87,11 @@ export default function Classes() {
       details: {
         description:
           "Covers all you need to create polished, functional websites, which are perfect for hackathons and personal projects!",
-        whatYouLearn: [
-          "HTML",
-          "CSS",
-          "Git/GitHub",
-          "APIs"
-        ],
+        whatYouLearn: ["HTML", "CSS", "Git/GitHub", "APIs"],
       },
     },
   ];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = parseInt(
-              (entry.target as HTMLElement).dataset.courseIndex || "0"
-            );
-            setActiveCourse(index);
-          }
-        });
-      },
-      {
-        threshold: 0.3,
-        rootMargin: "-10% 0px -10% 0px",
-      }
-    );
-
-    sectionRefs.current.forEach((section) => {
-      if (section) observer.observe(section);
-    });
-
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <div className="px-24 py-16">
@@ -125,74 +100,86 @@ export default function Classes() {
         All our classes take place online through Google Meet. Assignments and
         course materials will be distributed using Google Classroom.
       </div>
-
-      <div className="grid grid-cols-12 gap-12">
-        {/* Sticky Left Side - Changes based on active course */}
-        <div className="col-span-4 sticky top-20 self-start h-fit">
-          <div className=" p-8 rounded-xl shadow-lg transition-all duration-500">
-            <h2 className="text-4xl font-bold mb-4 ">
-              {courses[activeCourse].title}
-            </h2>
-
-            <div className="space-y-4 mb-6">
-              <div className="flex items-center">
-                <span className="font-semibold  w-20">Level:</span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                  {courses[activeCourse].level}
-                </span>
-              </div>
-
-              <div className="flex items-center">
-                <span className="font-semibold  w-20">Duration:</span>
-                <span className="">{courses[activeCourse].duration}</span>
-              </div>
-
-              <div>
-                <span className="font-semibold ">Schedule:</span>
-                <p className=" mt-1">{courses[activeCourse].schedule}</p>
-              </div>
-
-              <div>
-                <span className="font-semibold ">Start Date:</span>
-                <p className=" mt-1">{courses[activeCourse].startDate}</p>
-              </div>
-            </div>
-
-            <button className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-              Enroll Now
-            </button>
-          </div>
-        </div>
-
-        {/* Scrollable Right Side - Course Details */}
-        <div className="col-span-8 space-y-24">
+      <div>
+        <div>
           {courses.map((course, courseIndex) => (
             <div
               key={courseIndex}
-              ref={(el) => {
-                sectionRefs.current[courseIndex] = el;
-              }}
-              data-course-index={courseIndex}
+              
               className="space-y-8 min-h-screen"
             >
-              <section>
-                <h4 className="text-2xl font-bold mb-4 ">Course Description</h4>
-                <p className=" text-lg leading-relaxed">
-                  {course.details.description}
-                </p>
-              </section>
+              <div className="grid grid-cols-[1fr_2fr] gap-12">
+                <div className="h-fit">
+                  <div className=" p-8 rounded-xl shadow-lg transition-all duration-500">
+                    <h2 className="text-4xl font-bold mb-4 ">
+                      {course.title}
+                    </h2>
 
-              <section>
-                <h4 className="text-2xl font-bold mb-4 ">What You'll Learn</h4>
-                <ul className="space-y-2">
-                  {course.details.whatYouLearn.map((item, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <span className="text-green-500 mr-3 mt-1">✓</span>
-                      <span className="">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </section>
+                    <div className="space-y-4 mb-6">
+                      <div className="flex items-center">
+                        <div className=""><b className="font-semibold">Level</b>: {course.level}</div>
+                      </div>
+
+                      <div className="flex items-center">
+                        <span className=""><b className="font-semibold">Duration</b>: {course.duration}</span>
+                      </div>
+
+                      <div>
+                        <span className="font-semibold ">Schedule:</span>
+                        <p className=" mt-1">
+                          {course.schedule}
+                        </p>
+                      </div>
+
+                      <div>
+                        <span className="font-semibold ">Start Date:</span>
+                        <p className=" mt-1">
+                          {course.startDate}
+                        </p>
+                      </div>
+                    </div>
+
+                    <button className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                      Enroll Now
+                    </button>
+                  </div>
+                </div>
+                <div>
+                  <section>
+                    <h4 className="text-2xl font-bold mb-4 ">
+                      Course Description
+                    </h4>
+                    <p className=" text-lg mb-8">
+                      {course.details.description}
+                    </p>
+                  </section>
+
+                  <section>
+                    <div className="grid grid-cols-[auto_1fr] gap-24 h-fit">
+                      <div>
+                        <h4 className="text-2xl font-bold mb-4 ">
+                          What You'll Learn
+                        </h4>
+                        <ul className="space-y-2">
+                          {course.details.whatYouLearn.map((item, idx) => (
+                            <li key={idx} className="flex items-start">
+                              <span className="text-green-500 mr-3 mt-1">
+                                ✓
+                              </span>
+                              <span className="">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <img
+                        className="rounded-xl shadow-md shadow-gray-500 border-gray-500 border self-center"
+                        src={course.img}
+                        alt={course.title}
+                      />
+                    </div>
+                  </section>
+                </div>
+              </div>
             </div>
           ))}
         </div>

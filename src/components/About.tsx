@@ -19,7 +19,7 @@ export default function About() {
         </div>
       </div>
       <div className="grid grid-cols-2 px-24">
-        <div>hi</div>
+        
         <div>
           <div className="text-2xl font-semibold mb-4">
             Our Mission
@@ -30,6 +30,7 @@ export default function About() {
             skill that can unlock limitless opportunities for students.
           </div>
         </div>
+        <div>hi</div>
       </div>
       <div className="grid grid-cols-2 px-24">
         <div>hi</div>

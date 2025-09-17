@@ -30,6 +30,7 @@ interface TextTypeProps {
   onSentenceComplete?: (sentence: string, index: number) => void;
   startOnVisible?: boolean;
   reverseMode?: boolean;
+  constText?: string;
 }
 
 const TextType = ({
@@ -51,13 +52,17 @@ const TextType = ({
   onSentenceComplete,
   startOnVisible = false,
   reverseMode = false,
+  constText = "",
   ...props
 }: TextTypeProps & React.HTMLAttributes<HTMLElement>) => {
   const [displayedText, setDisplayedText] = useState("");
+  const [constDisplayedText, setConstDisplayedText] = useState("");
   const [currentCharIndex, setCurrentCharIndex] = useState(0);
+  const [constCharIndex, setConstCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(!startOnVisible);
+  const [constTextComplete, setConstTextComplete] = useState(!constText);
   const cursorRef = useRef<HTMLSpanElement>(null);
   const containerRef = useRef<HTMLElement>(null);
 
@@ -95,6 +100,27 @@ const TextType = ({
     return () => observer.disconnect();
   }, [startOnVisible]);
 
+  // Handle const text typing (once only)
+  useEffect(() => {
+    if (!isVisible || !constText || constTextComplete) return;
+
+    let timeout: NodeJS.Timeout;
+
+    if (constCharIndex < constText.length) {
+      timeout = setTimeout(() => {
+        setConstDisplayedText(prev => prev + constText[constCharIndex]);
+        setConstCharIndex(prev => prev + 1);
+      }, typingSpeed);
+    } else {
+      // Const text is complete, start main text immediately
+      timeout = setTimeout(() => {
+        setConstTextComplete(true);
+      }, 0); // Just a brief pause to feel natural
+    }
+
+    return () => clearTimeout(timeout);
+  }, [constCharIndex, constText, constTextComplete, isVisible, typingSpeed, pauseDuration]);
+
   useEffect(() => {
     if (showCursor && cursorRef.current) {
       gsap.set(cursorRef.current, { opacity: 1 });
@@ -109,7 +135,7 @@ const TextType = ({
   }, [showCursor, cursorBlinkDuration]);
 
   useEffect(() => {
-    if (!isVisible) return;
+    if (!isVisible || !constTextComplete) return;
 
     let timeout: NodeJS.Timeout;
 
@@ -179,11 +205,13 @@ const TextType = ({
     reverseMode,
     variableSpeed,
     onSentenceComplete,
+    constTextComplete,
   ]);
 
   const shouldHideCursor =
     hideCursorWhileTyping &&
-    (currentCharIndex < textArray[currentTextIndex].length || isDeleting);
+    ((!constTextComplete && constCharIndex < constText.length) ||
+     (constTextComplete && (currentCharIndex < textArray[currentTextIndex].length || isDeleting)));
 
   return createElement(
     Component,
@@ -192,9 +220,16 @@ const TextType = ({
       className: `inline-block whitespace-pre-wrap tracking-tight ${className}`,
       ...props,
     },
-    <span className="inline" style={{ color: getCurrentTextColor() }}>
-      {displayedText}
-    </span>,
+    constText && (
+      <span className="inline text-white">
+        {constDisplayedText}
+      </span>
+    ),
+    constTextComplete && (
+      <span className="inline" style={{ color: getCurrentTextColor() }}>
+        {displayedText}
+      </span>
+    ),
     showCursor && (
       <span
         ref={cursorRef}
