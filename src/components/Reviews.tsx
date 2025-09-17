@@ -26,7 +26,7 @@ export default function Reviews() {
       <div className="font-bold text-6xl text-center mb-8">Reviews</div>
       <div className="grid grid-cols-3 gap-8">
         {reviews.map((review) => (
-          <SpotlightCard className="justify-center">
+          <SpotlightCard className="justify-center mb-16">
             <div className="text-2xl mb-4 text-center font-bold">{review.name}</div>
             <div className="text-center font-semibold mb-2">{review.role}</div>
             <div className="flex justify-center ">

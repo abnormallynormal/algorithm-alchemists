@@ -1,9 +1,10 @@
+import LightRays from "./components/LightRays";
 import Navigation from "./components/Navigation";
 
 export default function OurTeam() {
   return (
     <div>
-      <div className="fixed top-0 left-0 w-full z-50">
+      <div className="z-50">
         <Navigation />
       </div>
       <div className="relative z-10 flex flex-col px-24 py-24 items-center">
@@ -43,6 +44,20 @@ export default function OurTeam() {
         <div className="mb-4 text-4xl font-bold">Ontario</div>
         <div className="mb-4 text-4xl font-bold">Québec</div>
         <div className="mb-4 text-4xl font-bold">British Columbia</div>
+      </div>
+      <div className="fixed inset-0 z-0">
+        <LightRays
+          raysOrigin="bottom-center"
+          raysColor="#9466ff"
+          raysSpeed={0.5}
+          lightSpread={2}
+          rayLength={3}
+          followMouse={true}
+          mouseInfluence={0.1}
+          noiseAmount={0}
+          saturation={0.5}
+          distortion={0.01}
+        />
       </div>
     </div>
   );

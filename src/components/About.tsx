@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <div className="grid gap-8 h-screen pt-24">
-      <div className="grid grid-cols-2 px-24">
+      <div className="grid grid-cols-2 gap-12 px-24">
         <div>hi</div>
         <div>
           <div className="text-2xl font-semibold mb-4">
@@ -18,7 +18,7 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-2 px-24">
+      <div className="grid grid-cols-2 gap-12 px-24">
         
         <div>
           <div className="text-2xl font-semibold mb-4">
@@ -32,7 +32,7 @@ export default function About() {
         </div>
         <div>hi</div>
       </div>
-      <div className="grid grid-cols-2 px-24">
+      <div className="grid grid-cols-2 gap-12 px-24">
         <div>hi</div>
         <div>
           <div className="text-2xl font-semibold mb-4">
