@@ -74,6 +74,23 @@ export default function Classes() {
         ],
       },
     },
+    {
+      title: "Web Development Course",
+      level: "All",
+      duration: "Runs until February 2026",
+      schedule: "Saturdays, 8:00 PM to 9:30 PM EST",
+      startDate: "July 12, 2025",
+      details: {
+        description:
+          "Covers all you need to create polished, functional websites, which are perfect for hackathons and personal projects!",
+        whatYouLearn: [
+          "HTML",
+          "CSS",
+          "Git/GitHub",
+          "APIs"
+        ],
+      },
+    },
   ];
 
   useEffect(() => {
