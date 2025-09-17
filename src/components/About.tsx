@@ -1,15 +1,48 @@
 export default function About() {
   return (
-    <>
-      <div className="text-2xl font-semibold text-gray-700 mb-4">About Us</div>
-      <div>
-        Algorithm Alchemists is a non-profit organization (registered under Hack
-        Club) that teaches coding to elementary and high school students through
-        online classes. We believe that learning to code should be fun and
-        engaging. Our passionate high school student teachers provide the right
-        amount of homework, so students can master Python and move on to more
-        advanced programming languages and concepts.
+    <div className="grid gap-8 h-screen pt-24">
+      <div className="grid grid-cols-2 px-24">
+        <div>hi</div>
+        <div>
+          <div className="text-2xl font-semibold mb-4">
+            About Us
+          </div>
+          <div>
+            Algorithm Alchemists is a non-profit organization (registered under
+            Hack Club) that teaches coding to elementary and high school
+            students through online classes. We believe that learning to code
+            should be fun and engaging. Our passionate high school student
+            teachers provide the right amount of homework, so students can
+            master Python and move on to more advanced programming languages and
+            concepts.
+          </div>
+        </div>
       </div>
-    </>
+      <div className="grid grid-cols-2 px-24">
+        <div>hi</div>
+        <div>
+          <div className="text-2xl font-semibold mb-4">
+            Our Mission
+          </div>
+          <div>
+            At Algorithm Alchemists, our mission is to inspire and empower the
+            next generation of coders. We believe that coding is an essential
+            skill that can unlock limitless opportunities for students.
+          </div>
+        </div>
+      </div>
+      <div className="grid grid-cols-2 px-24">
+        <div>hi</div>
+        <div>
+          <div className="text-2xl font-semibold mb-4">
+            Our Approach
+          </div>
+          <div>
+            We take a hands-on approach to learning, with interactive lessons
+            and coding challenges that keep students engaged and motivated.
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

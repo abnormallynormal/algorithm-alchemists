@@ -3,7 +3,7 @@ import About from "./components/About";
 import Header from "./components/Header";
 import LightRays from "./components/LightRays";
 import Navigation from "./components/Navigation";
-
+import Classes from "./components/Classes";
 export default function App(){
   return (
     <div className="min-h-screen relative">
@@ -20,14 +20,11 @@ export default function App(){
           <div className="h-screen">
             <Header />
           </div>
-          <div id="about" className="py-8">
+          <div id="about" >
             <About />
           </div>
-          <div id="classes" className="py-8">
-            <h2 className="text-2xl font-semibold text-gray-700 mb-4">
-              Classes
-            </h2>
-            <p className="text-gray-600">Our classes section</p>
+          <div id="classes" className="">
+            <Classes/>
           </div>
           <div id="reviews" className="py-8">
             <h2 className="text-2xl font-semibold text-gray-700 mb-4">

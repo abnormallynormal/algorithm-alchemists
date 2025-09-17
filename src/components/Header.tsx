@@ -20,7 +20,7 @@ export default function Header(){
         </div>
         <div className="flex gap-4 mt-4">
           <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors">
-            Register Now
+            Sign Up Now
           </button>
           <button className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors">
             Learn More
