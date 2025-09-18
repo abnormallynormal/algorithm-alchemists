@@ -17,7 +17,7 @@ export default function Register() {
       </div>
       <div className="px-8 flex flex-col items-end">
         <div>
-          <div className="flex justify-end gap-4 mt-4 mb-2">
+          <div className="flex justify-end gap-4 mb-2">
             <a
               href="mailto:algorithm.alchemists@gmail.com"
               className="text-white hover:text-blue-300 transition-colors duration-300"

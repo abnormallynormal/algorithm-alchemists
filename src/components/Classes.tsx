@@ -96,7 +96,6 @@ export default function Classes() {
     },
   ];
 
-
   return (
     <div className="px-24 py-16">
       <div className="text-6xl font-bold mb-8 text-center">Classes</div>
@@ -109,7 +108,6 @@ export default function Classes() {
           {courses.map((course, courseIndex) => (
             <div
               key={courseIndex}
-              
               className="space-y-8 min-h-screen"
             >
               <div className="grid grid-cols-[1fr_2fr] gap-12">
