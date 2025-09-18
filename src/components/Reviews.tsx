@@ -22,20 +22,26 @@ export default function Reviews() {
     },
   ];
   return (
-    <div className="px-24 py-16">
+    <div className="px-24 pt-24">
       <div className="font-bold text-6xl text-center mb-8">Reviews</div>
       <div className="grid grid-cols-3 gap-8">
         {reviews.map((review) => (
-          <SpotlightCard className="justify-center mb-16">
-            <div className="text-2xl mb-4 text-center font-bold">{review.name}</div>
+          <SpotlightCard className="justify-center border-white shadow-gray-500 shadow-md">
+            <div className="text-2xl mb-4 text-center font-bold">
+              {review.name}
+            </div>
             <div className="text-center font-semibold mb-2">{review.role}</div>
             <div className="flex justify-center ">
-              <img src={fivestars} alt="5 stars" className="h-6 mb-4"/>
+              <img src={fivestars} alt="5 stars" className="h-6 mb-4" />
             </div>
-            <div className="text-center text-md font-light">"{review.review}"</div>
+            <div className="text-center text-md font-light">
+              "{review.review}"
+            </div>
           </SpotlightCard>
         ))}
       </div>
+
+      
     </div>
   );
 }

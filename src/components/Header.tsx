@@ -21,7 +21,7 @@ export default function Header(){
             showCursor={true}
             cursorCharacter="|"
             loop={true}
-            textColors={["#3B82F6", "#10B981", "#F59E0B", "#EF4444"]}
+            textColors={["#3B82F6", "#10B981", "#F59E0B", "#8B5CF6"]}
             className="text-white"
           />
         </div>

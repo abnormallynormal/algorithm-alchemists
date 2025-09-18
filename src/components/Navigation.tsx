@@ -107,17 +107,18 @@ export default function Navigation(){
         >
           Classes
         </a>
-        <a
-          href="/our-team"
-          className="text-white hover:text-gray-300 transition-colors"
-        >
-          Our Team
-        </a>
+
         <a
           href="/#reviews"
           className="text-white hover:text-gray-300 transition-colors"
         >
           Reviews
+        </a>
+        <a
+          href="/our-team"
+          className="text-white hover:text-gray-300 transition-colors"
+        >
+          Our Team
         </a>
         <a
           href="/#registration"

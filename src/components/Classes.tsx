@@ -8,6 +8,7 @@ export default function Classes() {
     {
       title: "Junior Course",
       img: beginner,
+      color: "#3B82F6",
       level: "Beginner",
       duration: "12 weeks",
       schedule: "Saturdays, 4:00 PM to 5:30 PM EST",
@@ -32,6 +33,7 @@ export default function Classes() {
     {
       title: "Intermediate Course",
       img: intermediate,
+      color: "#10B981",
       level: "Intermediate",
       duration: "Runs until February 2026",
       schedule: "Sundays, 8:00 PM to 9:30 PM EST",
@@ -57,6 +59,7 @@ export default function Classes() {
     {
       title: "Senior Course",
       img: advanced,
+      color: "#F59E0B",
       level: "Advanced",
       duration: "Runs until February 2026",
       schedule: "Wednesdays, 8:00 PM to 9:30 PM EST",
@@ -80,6 +83,7 @@ export default function Classes() {
     {
       title: "Web Development Course",
       img: webdev,
+      color: "#8B5CF6",
       level: "All",
       duration: "Runs until February 2026",
       schedule: "Saturdays, 8:00 PM to 9:30 PM EST",
@@ -110,7 +114,13 @@ export default function Classes() {
             >
               <div className="grid grid-cols-[1fr_2fr] gap-12">
                 <div className="h-fit">
-                  <div className=" p-8 rounded-xl shadow-lg transition-all duration-500">
+                  <div 
+                    className="p-8 rounded-xl border-2 bg-gray-600/10"
+                    style={{ 
+                      borderColor: course.color,
+                      boxShadow: `0 20px 40px -10px ${course.color}80, 0 10px 20px -5px ${course.color}60, 0 4px 6px -1px ${course.color}90`
+                    }}
+                  >
                     <h2 className="text-4xl font-bold mb-4 ">
                       {course.title}
                     </h2>
@@ -172,7 +182,7 @@ export default function Classes() {
                         </ul>
                       </div>
                       <img
-                        className="rounded-xl shadow-md shadow-gray-500 border-gray-500 border self-center"
+                        className="rounded-xl shadow-md shadow-gray-500  border self-center"
                         src={course.img}
                         alt={course.title}
                       />
