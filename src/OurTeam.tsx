@@ -1,6 +1,26 @@
+import HorizontalCarousel from "./components/HorizontalCarousel";
 import LightRays from "./components/LightRays";
 import Navigation from "./components/Navigation";
 import { motion } from "motion/react";
+import brandonLam from "./assets/pfps/brandon lam.avif";
+import brianGe from "./assets/pfps/brian ge.avif";
+import chloeChu from "./assets/pfps/chloe chu.avif";
+import elinaKhan from "./assets/pfps/elina khan.avif";
+import elizabethSoboleva from "./assets/pfps/elizabeth soboleva.avif";
+import ericWangPfp from "./assets/pfps/eric wang pfp.avif";
+import ethanGuan from "./assets/pfps/ethan guan.avif";
+import ethanLeung from "./assets/pfps/ethan leung.avif";
+import evelynDam from "./assets/pfps/evelyn dam.avif";
+import jeffreyWang from "./assets/pfps/jeffrey wang.avif";
+import justinChou from "./assets/pfps/justin chou.avif";
+import kaleyWu from "./assets/pfps/kaley wu.avif";
+import kyleZhou from "./assets/pfps/kyle zhou.avif";
+import soroushPaidar from "./assets/pfps/soroush paidar.avif";
+import weizhongXia from "./assets/pfps/weizhong xia.avif";
+import zongqiaoZhou from "./assets/pfps/zongqiao zhou.avif";
+import EmblaCarousel from "./components/EmblaCarousel";
+import type { EmblaOptionsType } from "embla-carousel";
+import SpotlightCard from "./components/SpotlightCard";
 
 export default function OurTeam() {
   return (
@@ -8,11 +28,12 @@ export default function OurTeam() {
       <div className="z-50">
         <Navigation />
       </div>
-      <div className="relative z-10 flex flex-col px-24 py-24 items-center">
+      <div className="relative z-10 flex flex-col px-24 pt-24 pb-12 items-center">
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
+          viewport={{ once: true }}
         >
           <div className="text-6xl font-bold mb-8">Our Team</div>
         </motion.div>
@@ -22,11 +43,11 @@ export default function OurTeam() {
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
           viewport={{ once: true }}
         >
-          <div className="text-2xl font-semibold mb-4">
+          <div className="text-2xl font-semibold mb-4 text-center">
             Dedication. Expertise. Passion.
           </div>
         </motion.div>
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
@@ -62,9 +83,136 @@ export default function OurTeam() {
             code both fun and engaging!
           </div>
         </motion.div>
-        <div className="mb-4 text-4xl font-bold">Ontario</div>
-        <div className="mb-4 text-4xl font-bold">Québec</div>
-        <div className="mb-4 text-4xl font-bold">British Columbia</div>
+        <div className="mb-4 text-5xl font-bold">Ontario</div>
+        <EmblaCarousel
+          slides={[
+            {
+              name: "Eric Wang",
+              title: "President / Founder / Web Dev / Senior Class Teacher",
+              description:
+                "United States of America Computing Olympiad (USACO) Silver Division",
+              image: ericWangPfp,
+            },
+            {
+              name: "Jeffrey Wang",
+              title: "Vice-President / Co-Founder / Junior Class Head Teacher",
+              description:
+                "Canadian Computing Competition (CCC) Junior Division Distinction",
+              image: jeffreyWang,
+            },
+            {
+              name: "Ethan Leung",
+              title: "Vice-President / Web Dev / Intermediate Class Teacher",
+              image: ethanLeung,
+            },
+
+            {
+              name: "Elina Khan",
+              title: "Head Public Relations Officer",
+              image: elinaKhan,
+            },
+            {
+              name: "Chloe Chu",
+              title: "Public Relations Officer",
+              image: chloeChu,
+            },
+            {
+              name: "Brandon Lam",
+              title: "Former Senior Class Teacher",
+              description:
+                "Canadian Computing Competition (CCC) Senior Division Group 3 Honour Roll (top 3% of competitors)",
+              image: brandonLam,
+            },
+            {
+              name: "Brian Ge",
+              title: "Intermediate Class Head Teacher",
+              description:
+                "Canadian Computing Competition (CCC) Senior Division Distinction",
+              image: brianGe,
+            },
+            {
+              name: "Justin Chou",
+              title: "Former Junior Class Teacher",
+              description:
+                "Canadian Computing Competition (CCC) Junior Division Distinction",
+              image: justinChou,
+            },
+            {
+              name: "Kyle Zhou",
+              title: "Former Senior Class Teacher",
+              description:
+                "Perfect Score on Canadian Computing Competition (CCC) Junior Division",
+              image: kyleZhou,
+            },
+            {
+              name: "Elizabeth Soboleva",
+              title: "Former Junior Class Teacher",
+              image: elizabethSoboleva,
+            },
+            {
+              name: "Ethan Guan",
+              title: "Senior Class Teacher",
+              image: ethanGuan,
+            },
+
+            {
+              name: "Kaley Wu",
+              title: "Junior Class Teacher",
+              image: kaleyWu,
+            },
+
+            {
+              name: "Soroush Paidar",
+              title: "Junior Class Teacher",
+              image: soroushPaidar,
+            },
+          ]}
+        />
+        <div className="mt-8 mb-4 text-5xl font-bold">Québec</div>
+        <div className="flex gap-4 py-4 mb-8">
+          <SpotlightCard className="flex flex-col mx-2 w-72 items-center p-4 border-gray-400 shadow-gray-500 shadow-lg bg-slate-700/10 flex-shrink-0 h-full select-none">
+            <div className="text-center text-2xl font-semibold mb-4">
+              Zongqiao Zhou
+            </div>
+            <img
+              src={zongqiaoZhou}
+              alt="Zongqiao Zhou "
+              className="rounded-lg w-48"
+            />
+            <div className="text-center text-md font-medium mt-2">
+              Junior Teacher
+            </div>
+          </SpotlightCard>
+          <SpotlightCard className="flex flex-col mx-2 w-72 items-center p-4 border-gray-400 shadow-gray-500 shadow-lg bg-slate-700/10 flex-shrink-0 h-full select-none">
+            <div className="text-center text-2xl font-semibold mb-4">
+              Weizhong Xia
+            </div>
+            <img
+              src={weizhongXia}
+              alt="Weizhong Xia "
+              className="rounded-lg w-48"
+            />
+            <div className="text-center text-md font-medium mt-2">
+              Junior Teacher
+            </div>
+          </SpotlightCard>
+        </div>
+        <div className="mb-4 text-5xl font-bold">British Columbia</div>
+        <div className="p-4">
+          <SpotlightCard className="flex flex-col mx-2 w-72 items-center p-4 border-gray-400 shadow-gray-500 shadow-lg bg-slate-700/10 flex-shrink-0 h-full select-none">
+            <div className="text-center text-2xl font-semibold mb-4">
+              Evelyn Dam
+            </div>
+            <img
+              src={evelynDam}
+              alt="Evelyn Dam "
+              className="rounded-lg w-48"
+            />
+            <div className="text-center text-md font-medium mt-2">
+              Junior Teacher
+            </div>
+          </SpotlightCard>
+        </div>
       </div>
       <div className="px-8 py-4 flex flex-col items-end relative z-20">
         <div>
