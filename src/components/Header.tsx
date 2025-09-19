@@ -1,17 +1,12 @@
 import TextType from "./TextType";
 import { motion } from "motion/react";
 export default function Header() {
-  const handleSignUpClick = () => {
-    const registrationSection = document.getElementById("registration");
-    if (registrationSection) {
-      registrationSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  
 
   const handleLearnMoreClick = () => {
-    const aboutSection = document.getElementById('about');
+    const aboutSection = document.getElementById("about");
     if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
+      aboutSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -45,16 +40,15 @@ export default function Header() {
           transition={{ ease: "easeOut", duration: 0.5, delay: 0.5 }}
         >
           <div className="text-xl text-gray-600 max-w-2xl mb-4">
-            Transform your programming skills with expert-led courses, hands-on
-            projects, and a supportive community of fellow developers.
+            Improve your programming skills by building real projects, tackling
+            interesting problems, and connecting with a thriving community.
           </div>
           <div className="flex gap-4 mt-4 justify-center">
-            <button
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-200"
-              onClick={handleSignUpClick}
-            >
-              Sign Up Now
-            </button>
+            <a href="/sign-up">
+              <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-200">
+                Sign Up Now
+              </button>
+            </a>
             <button
               className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-200"
               onClick={handleLearnMoreClick}

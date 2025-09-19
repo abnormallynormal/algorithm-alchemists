@@ -11,6 +11,7 @@ export default function Classes() {
   const courses = [
     {
       title: "Junior Course",
+      link: "https://forms.gle/2ArYqzRxoEvCuH1v8",
       img: beginner,
       color: "#3B82F6",
       level: "Beginner",
@@ -36,6 +37,7 @@ export default function Classes() {
     },
     {
       title: "Intermediate Course",
+      link: "https://forms.gle/aTN1LUUhjsZjFKGT8",
       img: intermediate,
       color: "#E66A9B",
       level: "Intermediate",
@@ -62,6 +64,7 @@ export default function Classes() {
     },
     {
       title: "Senior Course",
+      link: "https://forms.gle/aTN1LUUhjsZjFKGT8",
       img: advanced,
       color: "#F59E0B",
       level: "Advanced",
@@ -86,6 +89,7 @@ export default function Classes() {
     },
     {
       title: "Web Development Course",
+      link: "https://forms.gle/aTN1LUUhjsZjFKGT8",
       img: webdev,
       color: "#8B5CF6",
       level: "All",
@@ -172,129 +176,151 @@ export default function Classes() {
               <motion.div
                 key={courseIndex}
                 className="absolute inset-0 flex items-center"
+                style={{ 
+                  pointerEvents: currentIndex === courseIndex ? 'auto' : 'none',
+                  zIndex: currentIndex === courseIndex ? 10 : 1
+                }}
                 initial={{ opacity: 0 }}
-                animate={{ 
+                animate={{
                   opacity: opacity,
                 }}
-                transition={{ 
+                transition={{
                   duration: 0.6,
-                  ease: "easeInOut"
+                  ease: "easeInOut",
                 }}
               >
-              <div className="w-full">
-                <div className="grid grid-cols-[1fr_2fr] gap-16">
-                  <motion.div 
-                    className="h-fit"
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ 
-                      opacity: currentIndex === courseIndex ? 1 : 0,
-                      x: currentIndex === courseIndex ? 0 : -50 
-                    }}
-                    transition={{ duration: 0.8, delay: currentIndex === courseIndex ? 0.2 : 0 }}
-                  >
-                    <div
-                      className="p-8 rounded-xl border-2 bg-gray-600/10"
-                      style={{
-                        borderColor: course.color,
-                        boxShadow: `0 20px 40px -10px ${course.color}80, 0 10px 20px -5px ${course.color}60, 0 4px 6px -1px ${course.color}90`,
+                <div className="w-full">
+                  <div className="grid grid-cols-[1fr_2fr] gap-16">
+                    <motion.div
+                      className="h-fit"
+                      initial={{ opacity: 0, x: -50 }}
+                      animate={{
+                        opacity: currentIndex === courseIndex ? 1 : 0,
+                        x: currentIndex === courseIndex ? 0 : -50,
+                      }}
+                      transition={{
+                        duration: 0.8,
+                        delay: currentIndex === courseIndex ? 0.2 : 0,
                       }}
                     >
-                      <h2 className="text-4xl font-bold mb-4">{course.title}</h2>
+                      <div
+                        className="p-8 rounded-xl border-2 bg-gray-600/10"
+                        style={{
+                          borderColor: course.color,
+                          boxShadow: `0 20px 40px -10px ${course.color}80, 0 10px 20px -5px ${course.color}60, 0 4px 6px -1px ${course.color}90`,
+                        }}
+                      >
+                        <h2 className="text-4xl font-bold mb-4">
+                          {course.title}
+                        </h2>
 
-                      <div className="space-y-4 mb-6">
-                        <div className="flex items-center">
+                        <div className="space-y-4 mb-6">
+                          <div className="flex items-center">
+                            <div>
+                              <b className="font-semibold">Level</b>:{" "}
+                              {course.level}
+                            </div>
+                          </div>
+
+                          <div className="flex items-center">
+                            <span>
+                              <b className="font-semibold">Duration</b>:{" "}
+                              {course.duration}
+                            </span>
+                          </div>
+
                           <div>
-                            <b className="font-semibold">Level</b>: {course.level}
+                            <span className="font-semibold">Schedule:</span>
+                            <p className="mt-1">{course.schedule}</p>
+                          </div>
+
+                          <div>
+                            <span className="font-semibold">Start Date:</span>
+                            <p className="mt-1">{course.startDate}</p>
                           </div>
                         </div>
 
-                        <div className="flex items-center">
-                          <span>
-                            <b className="font-semibold">Duration</b>:{" "}
-                            {course.duration}
-                          </span>
-                        </div>
-
-                        <div>
-                          <span className="font-semibold">Schedule:</span>
-                          <p className="mt-1">{course.schedule}</p>
-                        </div>
-
-                        <div>
-                          <span className="font-semibold">Start Date:</span>
-                          <p className="mt-1">{course.startDate}</p>
-                        </div>
+                        <a href={course.link} target="_blank" rel="noopener noreferrer">
+                          <button className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                            Enroll Now
+                          </button>
+                        </a>
                       </div>
+                    </motion.div>
 
-                      <button className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                        Enroll Now
-                      </button>
-                    </div>
-                  </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, x: 50 }}
+                      animate={{
+                        opacity: currentIndex === courseIndex ? 1 : 0,
+                        x: currentIndex === courseIndex ? 0 : 50,
+                      }}
+                      transition={{
+                        duration: 0.8,
+                        delay: currentIndex === courseIndex ? 0.4 : 0,
+                      }}
+                    >
+                      <section>
+                        <h4 className="text-2xl font-bold mb-4">
+                          Course Description
+                        </h4>
+                        <p className="text-lg mb-8">
+                          {course.details.description}
+                        </p>
+                      </section>
 
-                  <motion.div
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ 
-                      opacity: currentIndex === courseIndex ? 1 : 0,
-                      x: currentIndex === courseIndex ? 0 : 50 
-                    }}
-                    transition={{ duration: 0.8, delay: currentIndex === courseIndex ? 0.4 : 0 }}
-                  >
-                    <section>
-                      <h4 className="text-2xl font-bold mb-4">
-                        Course Description
-                      </h4>
-                      <p className="text-lg mb-8">
-                        {course.details.description}
-                      </p>
-                    </section>
-
-                    <section>
-                      <div className="grid grid-cols-[auto_1fr] gap-24 h-fit">
-                        <div>
-                          <h4 className="text-2xl font-bold mb-4">
-                            What You'll Learn
-                          </h4>
-                          <ul className="space-y-2">
-                            {course.details.whatYouLearn.map((item, idx) => (
-                              <motion.li 
-                                key={idx} 
-                                className="flex items-start"
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{ 
-                                  opacity: currentIndex === courseIndex ? 1 : 0,
-                                  x: currentIndex === courseIndex ? 0 : -20 
-                                }}
-                                transition={{ 
-                                  duration: 0.3, 
-                                  delay: currentIndex === courseIndex ? 0.6 + idx * 0.05 : 0 
-                                }}
-                              >
-                                <span className="text-green-500 mr-3 mt-1">
-                                  ✓
-                                </span>
-                                <span>{item}</span>
-                              </motion.li>
-                            ))}
-                          </ul>
+                      <section>
+                        <div className="grid grid-cols-[auto_1fr] gap-24 h-fit">
+                          <div>
+                            <h4 className="text-2xl font-bold mb-4">
+                              What You'll Learn
+                            </h4>
+                            <ul className="space-y-2">
+                              {course.details.whatYouLearn.map((item, idx) => (
+                                <motion.li
+                                  key={idx}
+                                  className="flex items-start"
+                                  initial={{ opacity: 0, x: -20 }}
+                                  animate={{
+                                    opacity:
+                                      currentIndex === courseIndex ? 1 : 0,
+                                    x: currentIndex === courseIndex ? 0 : -20,
+                                  }}
+                                  transition={{
+                                    duration: 0.3,
+                                    delay:
+                                      currentIndex === courseIndex
+                                        ? 0.6 + idx * 0.05
+                                        : 0,
+                                  }}
+                                >
+                                  <span className="text-green-500 mr-3 mt-1">
+                                    ✓
+                                  </span>
+                                  <span>{item}</span>
+                                </motion.li>
+                              ))}
+                            </ul>
+                          </div>
+                          <motion.img
+                            className="rounded-xl shadow-md shadow-gray-500 border self-center"
+                            src={course.img}
+                            alt={course.title}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{
+                              opacity: currentIndex === courseIndex ? 1 : 0,
+                              scale: currentIndex === courseIndex ? 1 : 0.9,
+                            }}
+                            transition={{
+                              duration: 0.8,
+                              delay: currentIndex === courseIndex ? 0.8 : 0,
+                            }}
+                          />
                         </div>
-                        <motion.img
-                          className="rounded-xl shadow-md shadow-gray-500 border self-center"
-                          src={course.img}
-                          alt={course.title}
-                          initial={{ opacity: 0, scale: 0.9 }}
-                          animate={{ 
-                            opacity: currentIndex === courseIndex ? 1 : 0,
-                            scale: currentIndex === courseIndex ? 1 : 0.9 
-                          }}
-                          transition={{ duration: 0.8, delay: currentIndex === courseIndex ? 0.8 : 0 }}
-                        />
-                      </div>
-                    </section>
-                  </motion.div>
+                      </section>
+                    </motion.div>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
             );
           })}
         </div>

@@ -94,7 +94,7 @@ export default function Navigation(){
       } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
     >
       <img src={logo} alt="Algorithm Alchemists" className="h-10 w-auto" />
-      <div className="flex space-x-6">
+      <div className="flex space-x-6 items-center">
         <a
           href="/#about"
           className="text-white hover:text-gray-300 transition-colors"
@@ -121,10 +121,12 @@ export default function Navigation(){
           Our Team
         </a>
         <a
-          href="/#registration"
+          href="/sign-up"
           className="text-white hover:text-gray-300 transition-colors"
         >
-          Registration
+          <button className="bg-white text-purple-900 px-4 py-2 text-lg font-bold rounded-3xl transition-all duration-300 shadow-lg transform hover:scale-105">
+            Sign Up
+          </button>
         </a>
       </div>
     </nav>
