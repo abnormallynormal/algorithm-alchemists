@@ -1,5 +1,4 @@
 import SpotlightCard from "./SpotlightCard";
-import {type EmblaOptionsType} from "embla-carousel"
 interface HorizontalCarouselProps {
   className?: string;
   items: {

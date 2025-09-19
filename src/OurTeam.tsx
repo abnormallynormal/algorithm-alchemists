@@ -1,4 +1,3 @@
-import HorizontalCarousel from "./components/HorizontalCarousel";
 import LightRays from "./components/LightRays";
 import Navigation from "./components/Navigation";
 import { motion } from "motion/react";
@@ -19,7 +18,6 @@ import soroushPaidar from "./assets/pfps/soroush paidar.avif";
 import weizhongXia from "./assets/pfps/weizhong xia.avif";
 import zongqiaoZhou from "./assets/pfps/zongqiao zhou.avif";
 import EmblaCarousel from "./components/EmblaCarousel";
-import type { EmblaOptionsType } from "embla-carousel";
 import SpotlightCard from "./components/SpotlightCard";
 
 export default function OurTeam() {
@@ -168,7 +166,7 @@ export default function OurTeam() {
             },
           ]}
         />
-        <div className="mt-8 mb-4 text-5xl font-bold">Québec</div>
+        <div className="mt-16 mb-4 text-5xl font-bold">Québec</div>
         <div className="flex gap-4 py-4 mb-8">
           <SpotlightCard className="flex flex-col mx-2 w-72 items-center p-4 border-gray-400 shadow-gray-500 shadow-lg bg-slate-700/10 flex-shrink-0 h-full select-none">
             <div className="text-center text-2xl font-semibold mb-4">
@@ -197,7 +195,7 @@ export default function OurTeam() {
             </div>
           </SpotlightCard>
         </div>
-        <div className="mb-4 text-5xl font-bold">British Columbia</div>
+        <div className="mt-8 mb-4 text-5xl font-bold">British Columbia</div>
         <div className="p-4">
           <SpotlightCard className="flex flex-col mx-2 w-72 items-center p-4 border-gray-400 shadow-gray-500 shadow-lg bg-slate-700/10 flex-shrink-0 h-full select-none">
             <div className="text-center text-2xl font-semibold mb-4">
