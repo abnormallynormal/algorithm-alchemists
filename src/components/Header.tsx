@@ -1,10 +1,17 @@
 import TextType from "./TextType";
-
-export default function Header(){
+import { motion } from "motion/react";
+export default function Header() {
   const handleSignUpClick = () => {
-    const registrationSection = document.getElementById('registration');
+    const registrationSection = document.getElementById("registration");
     if (registrationSection) {
-      registrationSection.scrollIntoView({ behavior: 'smooth' });
+      registrationSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleLearnMoreClick = () => {
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -25,19 +32,37 @@ export default function Header(){
             className="text-white"
           />
         </div>
-        <div className="text-4xl font-bold mb-8">at Algorithm Alchemists</div>
-        <div className="text-xl text-gray-600 max-w-2xl mb-4">
-          Transform your programming skills with expert-led courses, hands-on
-          projects, and a supportive community of fellow developers.
-        </div>
-        <div className="flex gap-4 mt-4">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors" onClick={handleSignUpClick}>
-            Sign Up Now
-          </button>
-          <button className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors">
-            Learn More
-          </button>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ ease: "easeOut", duration: 0.5, delay: 0.25 }}
+        >
+          <div className="text-4xl font-bold mb-8">at Algorithm Alchemists</div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 32 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ ease: "easeOut", duration: 0.5, delay: 0.5 }}
+        >
+          <div className="text-xl text-gray-600 max-w-2xl mb-4">
+            Transform your programming skills with expert-led courses, hands-on
+            projects, and a supportive community of fellow developers.
+          </div>
+          <div className="flex gap-4 mt-4 justify-center">
+            <button
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-200"
+              onClick={handleSignUpClick}
+            >
+              Sign Up Now
+            </button>
+            <button 
+              className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-200"
+              onClick={handleLearnMoreClick}
+            >
+              Learn More
+            </button>
+          </div>
+        </motion.div>
       </div>
     </>
   );

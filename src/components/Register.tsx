@@ -10,7 +10,7 @@ export default function Register() {
           instruction and personalized learning.
         </p>
         <div className="flex justify-center mb-12">
-          <button className="bg-white text-purple-900 px-8 py-4 text-xl font-bold rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+          <button className="bg-white text-purple-900 px-8 py-4 text-xl font-bold rounded-lg transition-all duration-300 shadow-lg transform hover:scale-105">
             Sign Up Now!
           </button>
         </div>
