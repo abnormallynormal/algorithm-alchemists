@@ -104,12 +104,12 @@ const TextType = ({
   useEffect(() => {
     if (!isVisible || !constText || constTextComplete) return;
 
-    let timeout: NodeJS.Timeout;
+    let timeout: ReturnType<typeof setTimeout>;
 
     if (constCharIndex < constText.length) {
       timeout = setTimeout(() => {
-        setConstDisplayedText(prev => prev + constText[constCharIndex]);
-        setConstCharIndex(prev => prev + 1);
+        setConstDisplayedText((prev) => prev + constText[constCharIndex]);
+        setConstCharIndex((prev) => prev + 1);
       }, typingSpeed);
     } else {
       // Const text is complete, start main text immediately
@@ -119,7 +119,14 @@ const TextType = ({
     }
 
     return () => clearTimeout(timeout);
-  }, [constCharIndex, constText, constTextComplete, isVisible, typingSpeed, pauseDuration]);
+  }, [
+    constCharIndex,
+    constText,
+    constTextComplete,
+    isVisible,
+    typingSpeed,
+    pauseDuration,
+  ]);
 
   useEffect(() => {
     if (showCursor && cursorRef.current) {
@@ -137,7 +144,7 @@ const TextType = ({
   useEffect(() => {
     if (!isVisible || !constTextComplete) return;
 
-    let timeout: NodeJS.Timeout;
+    let timeout: ReturnType<typeof setTimeout>;
 
     const currentText = textArray[currentTextIndex];
     const processedText = reverseMode
@@ -211,7 +218,8 @@ const TextType = ({
   const shouldHideCursor =
     hideCursorWhileTyping &&
     ((!constTextComplete && constCharIndex < constText.length) ||
-     (constTextComplete && (currentCharIndex < textArray[currentTextIndex].length || isDeleting)));
+      (constTextComplete &&
+        (currentCharIndex < textArray[currentTextIndex].length || isDeleting)));
 
   return createElement(
     Component,
@@ -221,9 +229,7 @@ const TextType = ({
       ...props,
     },
     constText && (
-      <span className="inline text-white">
-        {constDisplayedText}
-      </span>
+      <span className="inline text-white">{constDisplayedText}</span>
     ),
     constTextComplete && (
       <span className="inline" style={{ color: getCurrentTextColor() }}>
