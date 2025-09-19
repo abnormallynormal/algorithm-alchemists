@@ -37,7 +37,7 @@ export default function Classes() {
     {
       title: "Intermediate Course",
       img: intermediate,
-      color: "#10B981",
+      color: "#E66A9B",
       level: "Intermediate",
       duration: "Runs until February 2026",
       schedule: "Sundays, 8:00 PM to 9:30 PM EST",

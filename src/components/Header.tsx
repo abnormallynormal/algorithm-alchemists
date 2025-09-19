@@ -28,7 +28,7 @@ export default function Header() {
             showCursor={true}
             cursorCharacter="|"
             loop={true}
-            textColors={["#3B82F6", "#10B981", "#F59E0B", "#8B5CF6"]}
+            textColors={["#3B82F6", "#E66A9B", "#F59E0B", "#8B5CF6"]}
             className="text-white"
           />
         </div>
@@ -55,7 +55,7 @@ export default function Header() {
             >
               Sign Up Now
             </button>
-            <button 
+            <button
               className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-200"
               onClick={handleLearnMoreClick}
             >
