@@ -42,14 +42,18 @@ export default function Reviews() {
 
   return (
     <div className="px-24 pt-24">
-      <div className="font-bold text-6xl text-center mb-8">Reviews</div>
+      <motion.div  initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ ease: "easeOut", duration: 0.5, delay: 0.25 }}>
+        <div className="font-bold text-6xl text-center mb-8">Reviews</div>
+      </motion.div>
 
       <motion.div
         className="grid grid-cols-3 gap-8"
         variants={containerVariants}
         initial="hidden"
         whileInView="show"
-        viewport={{once: true}}
+        viewport={{ once: true }}
       >
         {reviews.map((review, idx) => (
           <motion.div key={idx} variants={itemVariants}>
