@@ -1,5 +1,5 @@
 import about from "../assets/about.png";
-import mission from "../assets/mission.png";
+import mission from "../../public/mission.png";
 import approach from "../assets/IMG_20250918_153304.jpg";
 import {motion} from "motion/react"
 export default function About() {
