@@ -66,8 +66,9 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              custom stickers!
+              custom stickers
             </a>
+            !
           </div>
         </motion.div>
       </div>

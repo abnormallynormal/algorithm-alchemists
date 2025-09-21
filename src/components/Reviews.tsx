@@ -6,16 +6,16 @@ import fivestars from "../assets/5_stars.svg.png";
 export default function Reviews() {
   const reviews = [
     {
+      name: "Kenneth Lock",
+      role: "Student",
+      review:
+        "I took the junior class for learning Python. The teachers were very smart, helpful, and kind, and I learned a lot even without prior coding experience. I liked the quick homework feedback since I could fix mistakes ASAP. The program made me interested in programming, and I plan to continue with competitive programming classes 😛",
+    },
+    {
       name: "Emily Ng",
       role: "Parent",
       review:
         "I'm very happy with the quality of education here. The teachers are great at helping my grade 2 child when they're confused. They explain things with simple comparisons. Well-spoken and very patient. Thank you for your hard work.",
-    },
-    {
-      name: "James Zhong",
-      role: "Parent",
-      review:
-        "We appreciate the quick feedback on homework. It allows my son to resubmit their work and learn from mistakes. This program has sparked their interest in programming. I will be signing up my older one for competitive programming classes. Thank you!",
     },
     {
       name: "Jonathan Chen",
