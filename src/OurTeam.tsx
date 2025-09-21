@@ -238,8 +238,9 @@ export default function OurTeam() {
           </SpotlightCard>
         </div>
       </div>
-      <div className=" py-4 flex flex-col items-end relative z-20">
-        <div>
+      <div className=" py-4 flex flex-row items-end justify-between relative z-20">
+        <div className="text-sm lg:text-md">Sponsored by Hack Club</div>
+        <div className="">
           <div className="flex justify-end gap-4 mt-4 mb-2">
             <a
               href="mailto:algorithm.alchemists@gmail.com"
@@ -250,7 +251,6 @@ export default function OurTeam() {
                 <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
               </svg>
             </a>
-
             <a
               href="https://www.instagram.com/algorithm.alchemists"
               target="_blank"
@@ -263,8 +263,10 @@ export default function OurTeam() {
               </svg>
             </a>
           </div>
+          <div className="text-right text-sm lg:text-md">
+            © 2025 Algorithm Alchemists
+          </div>
         </div>
-        <div className="text-right text-sm lg:text-md">© 2025 Algorithm Alchemists</div>
       </div>
       <div className="fixed inset-0 z-0">
         <LightRays

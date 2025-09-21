@@ -17,7 +17,9 @@ export default function Register() {
           </a>
         </div>
       </div>
-      <div className="px-8 flex flex-col items-end text-sm  lg:text-md">
+      <div className="px-8 flex flex-row justify-between items-end text-sm  lg:text-md">
+        <div className="text-sm lg:text-md">Sponsored by Hack Club</div>
+
         <div>
           <div className="flex justify-end gap-4 mb-2">
             <a
@@ -29,7 +31,6 @@ export default function Register() {
                 <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
               </svg>
             </a>
-
             <a
               href="https://www.instagram.com/algorithm.alchemists"
               target="_blank"
@@ -42,9 +43,8 @@ export default function Register() {
               </svg>
             </a>
           </div>
+          <div className="text-right">© 2025 Algorithm Alchemists</div>
         </div>
-
-        <div className="text-right">© 2025 Algorithm Alchemists</div>
       </div>
     </div>
   );

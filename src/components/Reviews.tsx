@@ -9,7 +9,7 @@ export default function Reviews() {
       name: "Kenneth Lock",
       role: "Student",
       review:
-        "I took the junior class for learning Python. The teachers were very smart, helpful, and kind, and I learned a lot even without prior coding experience. I liked the quick homework feedback since I could fix mistakes ASAP. The program made me interested in programming, and I plan to continue with competitive programming classes 😛",
+        "I took the junior class for learning Python. The teachers were very smart, helpful, and kind, and I learned a lot even without prior coding experience. I liked the quick homework feedback since I could fix mistakes ASAP. The program made me interested in programming, and I plan to continue with competitive programming classes :P",
     },
     {
       name: "Emily Ng",
