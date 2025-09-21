@@ -25,11 +25,16 @@ a:hover {
 }
 
 html {
-  
+  color-scheme: dark only !important;
+  background-color: #0f0f23 !important; /* or your preferred dark bg */
+  color: #ffffff !important;
   overscroll-behavior: none;
 }
 
 body {
+  color-scheme: dark only !important;
+  background-color: #0f0f23 !important; /* or your preferred dark bg */
+  color: #ffffff !important;
   margin: 0;
   padding: 0;
   min-width: 320px;
@@ -84,5 +89,5 @@ button:focus-visible {
 }
 
 .no-overscroll {
-  overscroll-behavior:none;
+  overscroll-behavior: none;
 }
