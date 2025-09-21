@@ -63,6 +63,8 @@ export default function Header() {
             <a
               className="text-md  lg:text-lg xl:text-xl"
               href="https://www.jukeboxprint.com/custom-stickers"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               custom stickers!
             </a>

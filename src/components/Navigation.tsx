@@ -108,8 +108,14 @@ export default function Navigation(){
       } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
     >
       <div className="flex justify-between items-center py-4 px-4 sm:px-6 lg:px-8">
-        <img src={logo} alt="Algorithm Alchemists" className="h-8 sm:h-10 w-auto" />
-        
+        <a href="/">
+          <img
+            src={logo}
+            alt="Algorithm Alchemists"
+            className="h-8 sm:h-12 w-auto"
+          />
+        </a>
+
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-4 lg:space-x-6 items-center">
           <a
