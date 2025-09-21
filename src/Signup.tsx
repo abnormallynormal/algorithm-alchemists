@@ -1,7 +1,7 @@
 export default function Signup(){
   return (
-    <div className="flex justify-center h-screen">
-      <div className="flex flex-col self-center ">
+    <div className="flex justify-center h-screen px-4">
+      <div className="flex flex-col self-center px-8">
         <div className="text-3xl font-bold mb-2">
           Which class are you registering for?
         </div>

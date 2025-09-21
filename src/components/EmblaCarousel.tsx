@@ -75,20 +75,20 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
           {slides.map((item, index) => (
             <div key={`${item.name}-${index}`} className="embla__slide flex-none select-none">
               <SpotlightCard
-                className="flex flex-col mx-2 w-72 items-center p-4 border-gray-400 shadow-gray-500 shadow-lg bg-slate-700/10 flex-shrink-0 h-full select-none"
+                className="flex flex-col mx-2 w-64 lg:w-72 items-center p-4 border-gray-400 shadow-gray-500 shadow-lg bg-slate-700/10 flex-shrink-0 h-full select-none"
               >
-                <div className="text-center text-2xl font-semibold mb-4">
+                <div className="text-center text-lg lg:text-xl xl:text-2xl font-semibold mb-4">
                   {item.name}
                 </div>
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="rounded-lg w-48"
+                  className="rounded-lg w-40 lg:w-48"
                 />
-                <div className="text-center text-md font-medium mt-2">
+                <div className="text-center text-md lg:text-lg font-medium mt-2">
                   {item.title}
                 </div>
-                <div className="text-center text-sm text-gray-400 mt-2">
+                <div className="text-center text-sm lg:text-md text-gray-400 mt-2">
                   {item.description}
                 </div>
               </SpotlightCard>

@@ -13,7 +13,7 @@ export default function App() {
       </div>
       <div className="relative z-10">
         <div>
-          <div className="h-screen">
+          <div className="h-screen px-8 md:px-12 lg:px-24">
             <Header />
           </div>
           <div id="about">

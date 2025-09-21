@@ -22,18 +22,20 @@ import SpotlightCard from "./components/SpotlightCard";
 
 export default function OurTeam() {
   return (
-    <div>
+    <div className="px-8 lg:px-16 xl:px-24">
       <div className="z-50">
         <Navigation />
       </div>
-      <div className="relative z-10 flex flex-col px-24 pt-24 pb-12 items-center">
+      <div className="relative z-10 flex flex-col  pt-24 pb-12 ">
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <div className="text-6xl font-bold mb-8">Our Team</div>
+          <div className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-8 text-center">
+            Our Team
+          </div>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 32 }}
@@ -41,7 +43,7 @@ export default function OurTeam() {
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
           viewport={{ once: true }}
         >
-          <div className="text-2xl font-semibold mb-4 text-center">
+          <div className="text-lg lg:text-xl xl:text-2xl font-semibold mb-4 text-center">
             Dedication. Expertise. Passion.
           </div>
         </motion.div>
@@ -51,14 +53,14 @@ export default function OurTeam() {
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <div className="mb-4 px-8">
+          <div className="mb-4 px-8 text-md lg:text-lg text-center">
             Founded and run by St. Theresa of Lisieux CHS students enrolled in
             the Advanced Placement (AP) program in Ontario, International
             Baccalaureate (IB) students at Collège Jean-de-Brébeuf in Québec,
             and others in British Columbia, Algorithm Alchemists embodies
             excellence and innovation.
           </div>
-          <div className="mb-4 px-8">
+          <div className="mb-4 px-8 text-md lg:text-lg text-center">
             Our team of dedicated teachers has consistently excelled in
             prestigious competitions, such as the Canadian Computing Competition
             (CCC) and the United States Computing Olympiad (USACO).{" "}
@@ -70,7 +72,7 @@ export default function OurTeam() {
             —a recognition awarded to those ranking in the top 25% of
             participants in both the junior and senior divisions.
           </div>
-          <div className="mb-16 px-8">
+          <div className="mb-8 lg:mb-16 px-8 text-md lg:text-lg text-center">
             At Algorithm Alchemists, we are driven to equip students with the
             skills necessary to become fluent coders. We believe that coding
             will emerge as an essential skill in the new century, much like
@@ -81,7 +83,9 @@ export default function OurTeam() {
             code both fun and engaging!
           </div>
         </motion.div>
-        <div className="mb-4 text-5xl font-bold">Ontario</div>
+        <div className="mb-4 text-3xl lg:text-4xl xl:text-5xl font-bold self-center">
+          Ontario
+        </div>
         <EmblaCarousel
           slides={[
             {
@@ -166,53 +170,75 @@ export default function OurTeam() {
             },
           ]}
         />
-        <div className="mt-16 mb-4 text-5xl font-bold">Québec</div>
-        <div className="flex gap-4 py-4 mb-8">
-          <SpotlightCard className="flex flex-col mx-2 w-72 items-center p-4 border-gray-400 shadow-gray-500 shadow-lg bg-slate-700/10 flex-shrink-0 h-full select-none">
+        <div className="mt-8 lg:mt-16 mb-4 text-3xl lg:text-4xl xl:text-5xl self-center font-bold">
+          Québec
+        </div>
+        <div className="gap-4 py-4 mb-8 hidden sm:flex justify-center">
+          <SpotlightCard className="flex flex-col mx-2 w-64 lg:w-72 items-center p-4 border-gray-400 shadow-gray-500 shadow-lg bg-slate-700/10 flex-shrink-0 h-full select-none">
             <div className="text-center text-2xl font-semibold mb-4">
               Zongqiao Zhou
             </div>
             <img
               src={zongqiaoZhou}
               alt="Zongqiao Zhou "
-              className="rounded-lg w-48"
+              className="rounded-lg w-40 lg:w-48"
             />
-            <div className="text-center text-md font-medium mt-2">
+            <div className="text-center text-md lg:text-lg font-medium mt-2">
               Junior Teacher
             </div>
           </SpotlightCard>
-          <SpotlightCard className="flex flex-col mx-2 w-72 items-center p-4 border-gray-400 shadow-gray-500 shadow-lg bg-slate-700/10 flex-shrink-0 h-full select-none">
+          <SpotlightCard className="flex flex-col mx-2 w-64 lg:w-72 items-center p-4 border-gray-400 shadow-gray-500 shadow-lg bg-slate-700/10 flex-shrink-0 h-full select-none">
             <div className="text-center text-2xl font-semibold mb-4">
               Weizhong Xia
             </div>
             <img
               src={weizhongXia}
               alt="Weizhong Xia "
-              className="rounded-lg w-48"
+              className="rounded-lg w-40 lg:w-48"
             />
-            <div className="text-center text-md font-medium mt-2">
+            <div className="text-center text-md lg:text-lg font-medium mt-2">
               Junior Teacher
             </div>
           </SpotlightCard>
         </div>
-        <div className="mt-8 mb-4 text-5xl font-bold">British Columbia</div>
-        <div className="p-4">
-          <SpotlightCard className="flex flex-col mx-2 w-72 items-center p-4 border-gray-400 shadow-gray-500 shadow-lg bg-slate-700/10 flex-shrink-0 h-full select-none">
+        <div className="sm:hidden">
+          <EmblaCarousel
+            slides={[
+              {
+                name: "Zongqiao Zhou",
+                title: "Junior Class Teacher",
+
+                image: zongqiaoZhou,
+              },
+              {
+                name: "Weizhong Xia",
+                title: "Junior Class Teacher",
+
+                image: weizhongXia,
+              },
+            ]}
+          />
+        </div>
+        <div className="mt-8 mb-4 text-3xl lg:text-4xl xl:text-5xl self-center font-bold">
+          British Columbia
+        </div>
+        <div className="p-4 flex justify-center">
+          <SpotlightCard className="flex flex-col mx-2 w-64 lg:w-72 items-center p-4 border-gray-400 shadow-gray-500 shadow-lg bg-slate-700/10 flex-shrink-0 h-full select-none">
             <div className="text-center text-2xl font-semibold mb-4">
               Evelyn Dam
             </div>
             <img
               src={evelynDam}
               alt="Evelyn Dam "
-              className="rounded-lg w-48"
+              className="rounded-lg w-40 lg:w-48"
             />
-            <div className="text-center text-md font-medium mt-2">
+            <div className="text-center text-md lg:text-lg font-medium mt-2">
               Junior Teacher
             </div>
           </SpotlightCard>
         </div>
       </div>
-      <div className="px-8 py-4 flex flex-col items-end relative z-20">
+      <div className=" py-4 flex flex-col items-end relative z-20">
         <div>
           <div className="flex justify-end gap-4 mt-4 mb-2">
             <a
@@ -238,7 +264,7 @@ export default function OurTeam() {
             </a>
           </div>
         </div>
-        <div className="text-right">© 2025 Algorithm Alchemists</div>
+        <div className="text-right text-sm lg:text-md">© 2025 Algorithm Alchemists</div>
       </div>
       <div className="fixed inset-0 z-0">
         <LightRays

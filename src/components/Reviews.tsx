@@ -41,15 +41,18 @@ export default function Reviews() {
   };
 
   return (
-    <div className="px-24 pt-24">
-      <motion.div  initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ ease: "easeOut", duration: 0.5, delay: 0.25 }}>
-        <div className="font-bold text-6xl text-center mb-8">Reviews</div>
+    <div className="px-8 lg:px-16 xl:px-24 pt-12 lg:pt-18">
+      <motion.div 
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ ease: "easeOut", duration: 0.5, delay: 0.25 }}
+        viewport={{ once: true }}
+      >
+        <div className="font-bold text-4xl lg:text-5xl xl:text-6xl text-center mb-8">Reviews</div>
       </motion.div>
 
       <motion.div
-        className="grid grid-cols-3 gap-8"
+        className="grid grid-rows-3 grid-cols-1 md:grid-rows-1 md:grid-cols-3 gap-2 md:gap-8"
         variants={containerVariants}
         initial="hidden"
         whileInView="show"
@@ -58,16 +61,16 @@ export default function Reviews() {
         {reviews.map((review, idx) => (
           <motion.div key={idx} variants={itemVariants}>
             <SpotlightCard className="justify-center border-white shadow-gray-500 shadow-lg bg-slate-700/10">
-              <div className="text-2xl mb-4 text-center font-bold">
+              <div className="text-lg lg:text-xl xl:text-2xl mb-4 text-center font-bold">
                 {review.name}
               </div>
-              <div className="text-center font-semibold mb-2">
+              <div className="text-center text-sm lg:text-md xl:text-lg font-semibold mb-2">
                 {review.role}
               </div>
               <div className="flex justify-center ">
                 <img src={fivestars} alt="5 stars" className="h-6 mb-4" />
               </div>
-              <div className="text-center text-md font-light">
+              <div className="text-center text-sm lg:text-md xl:text-lg font-light">
                 "{review.review}"
               </div>
             </SpotlightCard>
