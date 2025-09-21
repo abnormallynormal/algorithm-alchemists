@@ -4,7 +4,7 @@ import approach from "../assets/IMG_20250918_153304.jpg";
 import {motion} from "motion/react"
 export default function About() {
   return (
-    <div className="grid gap-8 px-8 lg:px-16 xl:px-24 pt-24 min-h-screen">
+    <div className="grid gap-8 px-8 lg:px-16 xl:px-24 lg:pt-24 min-h-screen">
       <motion.div
         initial={{ opacity: 0, y: 32 }}
         whileInView={{ opacity: 1, y: 0 }}
