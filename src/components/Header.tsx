@@ -1,7 +1,28 @@
 import TextType from "./TextType";
 import { motion } from "motion/react";
+import { useState, useEffect } from "react";
+import { ChevronDown } from "lucide-react";
 export default function Header() {
-  
+  const [isAtTop, setIsAtTop] = useState(true);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsAtTop(window.scrollY <= 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (isAtTop && !hasAnimated) {
+      const timer = setTimeout(() => {
+        setHasAnimated(true);
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [isAtTop, hasAnimated]);
 
   const handleLearnMoreClick = () => {
     const aboutSection = document.getElementById("about");
@@ -12,7 +33,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center h-full text-center mb-8">
+      <div className="relative flex flex-col items-center justify-center h-full text-center mb-8">
         <div className="text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-8">
           <TextType
             constText="Unlock your "
@@ -51,12 +72,15 @@ export default function Header() {
                 Sign Up Now
               </button>
             </a>
-            <button
-              className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200"
-              onClick={handleLearnMoreClick}
+            <a
+              href="https://forms.gle/smo5FH8unWtaScy57"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Learn More
-            </button>
+              <button className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200">
+                Volunteer With Us!
+              </button>
+            </a>
           </div>
           <div className="mt-4 text-md md:text-lg lg:text-xl  text-gray-500">
             Thanks to Jukebox for our{" "}
@@ -69,6 +93,27 @@ export default function Header() {
               custom stickers
             </a>
             !
+          </div>
+        </motion.div>
+
+        {/* Scroll Down Indicator */}
+        <motion.div
+          className="absolute bottom-8 transform -translate-x-1/2 z-10"
+          initial={{ opacity: 0, y: -4 }}
+          animate={{
+            opacity: isAtTop && hasAnimated ? 1 : 0,
+            y: isAtTop && hasAnimated ? 0 : -10,
+          }}
+          transition={{
+            duration: 0.5,
+            ease: "easeIn",
+          }}
+        >
+          <div
+            className="text-gray-500 animate-bounce cursor-pointer hover:text-gray-600 transition-colors"
+            onClick={handleLearnMoreClick}
+          >
+            <ChevronDown size={60} />
           </div>
         </motion.div>
       </div>
