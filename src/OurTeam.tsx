@@ -107,7 +107,13 @@ export default function OurTeam() {
               title: "Vice-President / Web Dev / Intermediate Class Teacher",
               image: ethanLeung,
             },
-
+            {
+              name: "Brian Ge",
+              title: "Intermediate Class Head Teacher",
+              description:
+                "Canadian Computing Competition (CCC) Senior Division Distinction",
+              image: brianGe,
+            },
             {
               name: "Elina Khan",
               title: "Head Public Relations Officer",
@@ -125,13 +131,7 @@ export default function OurTeam() {
                 "Canadian Computing Competition (CCC) Senior Division Group 3 Honour Roll (top 3% of competitors)",
               image: brandonLam,
             },
-            {
-              name: "Brian Ge",
-              title: "Intermediate Class Head Teacher",
-              description:
-                "Canadian Computing Competition (CCC) Senior Division Distinction",
-              image: brianGe,
-            },
+            
             {
               name: "Justin Chou",
               title: "Former Junior Class Teacher",
