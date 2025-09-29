@@ -18,17 +18,17 @@ export default function Register() {
         </div>
       </div>
       <div className="px-8 flex flex-row justify-between items-end text-sm  lg:text-md">
-        <div className="text-sm lg:text-md">
-          <a
+        <p className="text-sm lg:text-md">
+          Sponsored by{" "}
+          <a  
               href="https://hackclub.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-pink-300 transition-all duration-300"
               aria-label="Hack Club Link"
             >
-          Sponsored by Hack Club
+          Hack Club
           </a>
-        </div>
+        </p>
 
         <div>
           <div className="flex justify-end gap-4 mb-2">
