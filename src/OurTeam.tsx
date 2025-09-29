@@ -108,13 +108,6 @@ export default function OurTeam() {
               image: ethanLeung,
             },
             {
-              name: "Brian Ge",
-              title: "Intermediate Class Head Teacher",
-              description:
-                "Canadian Computing Competition (CCC) Senior Division Distinction",
-              image: brianGe,
-            },
-            {
               name: "Elina Khan",
               title: "Head Public Relations Officer",
               image: elinaKhan,
@@ -125,38 +118,17 @@ export default function OurTeam() {
               image: chloeChu,
             },
             {
-              name: "Brandon Lam",
-              title: "Former Senior Class Teacher",
+              name: "Brian Ge",
+              title: "Intermediate Class Head Teacher",
               description:
-                "Canadian Computing Competition (CCC) Senior Division Group 3 Honour Roll (top 3% of competitors)",
-              image: brandonLam,
-            },
-            
-            {
-              name: "Justin Chou",
-              title: "Former Junior Class Teacher",
-              description:
-                "Canadian Computing Competition (CCC) Junior Division Distinction",
-              image: justinChou,
-            },
-            {
-              name: "Kyle Zhou",
-              title: "Former Senior Class Teacher",
-              description:
-                "Perfect Score on Canadian Computing Competition (CCC) Junior Division",
-              image: kyleZhou,
-            },
-            {
-              name: "Elizabeth Soboleva",
-              title: "Former Junior Class Teacher",
-              image: elizabethSoboleva,
+                "Canadian Computing Competition (CCC) Senior Division Distinction",
+              image: brianGe,
             },
             {
               name: "Ethan Guan",
-              title: "Senior Class Teacher",
+              title: "Web Dev / Senior Class Teacher",
               image: ethanGuan,
             },
-
             {
               name: "Kaley Wu",
               title: "Junior Class Teacher",
@@ -168,6 +140,34 @@ export default function OurTeam() {
               title: "Junior Class Teacher",
               image: soroushPaidar,
             },
+            {
+              name: "Brandon Lam",
+              title: "Former Senior Class Teacher",
+              description:
+                "Canadian Computing Competition (CCC) Senior Division Group 3 Honour Roll (top 3% of competitors)",
+              image: brandonLam,
+            },   
+            
+            {
+              name: "Kyle Zhou",
+              title: "Former Senior Class Teacher",
+              description:
+                "Perfect Score on Canadian Computing Competition (CCC) Junior Division",
+              image: kyleZhou,
+            },
+            {
+              name: "Justin Chou",
+              title: "Former Junior Class Teacher",
+              description:
+                "Canadian Computing Competition (CCC) Junior Division Distinction",
+              image: justinChou,
+            },
+            {
+              name: "Elizabeth Soboleva",
+              title: "Former Junior Class Teacher",
+              image: elizabethSoboleva,
+            },
+            
           ]}
         />
         <div className="mt-8 lg:mt-16 mb-4 text-3xl lg:text-4xl xl:text-5xl self-center font-bold">
