@@ -103,7 +103,7 @@ export default function Navigation(){
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-gray-black/30 backdrop-blur-md shadow-lg"
+          ? "bg-black/30 backdrop-blur-md shadow-lg"
           : "bg-transparent"
       } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
     >
@@ -154,7 +154,7 @@ export default function Navigation(){
 
         {/* Mobile Hamburger Button */}
         <button
-          className="md:hidden flex flex-col space-y-1 p-2"
+          className="md:hidden flex flex-col space-y-1 p-2 bg-transparent"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle mobile menu"
         >

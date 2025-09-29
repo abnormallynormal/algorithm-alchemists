@@ -52,15 +52,15 @@ export default function Reviews() {
       </motion.div>
 
       <motion.div
-        className="grid grid-rows-3 grid-cols-1 md:grid-rows-1 md:grid-cols-3 gap-2 md:gap-8"
+        className="flex flex-col md:grid md:grid-rows-1 md:grid-cols-3 gap-2 md:gap-8"
         variants={containerVariants}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
       >
         {reviews.map((review, idx) => (
-          <motion.div key={idx} variants={itemVariants}>
-            <SpotlightCard className="justify-center border-white shadow-gray-500 shadow-lg bg-slate-700/10">
+          <motion.div key={idx} variants={itemVariants} className="h-fit">
+            <SpotlightCard className="justify-center border-white shadow-gray-500 shadow-lg bg-slate-700/10 ">
               <div className="text-lg lg:text-xl xl:text-2xl mb-4 text-center font-bold">
                 {review.name}
               </div>
