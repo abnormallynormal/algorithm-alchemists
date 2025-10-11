@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "../assets/Ontario Circle Algorithm Alchemists Logo.png";
+import logo from "../../public/favicon.png"
 
 export default function Navigation(){
   const [isScrolled, setIsScrolled] = useState(false);
