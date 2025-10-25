@@ -10,18 +10,18 @@ export default function Signup(){
         </div>
         <ul className="list-disc px-4">
           <li className="text-lg">
-            <a href="https://forms.gle/2ArYqzRxoEvCuH1v8">Junior Course</a>
+            <a href="https://forms.gle/HrZR4UVcb2nkYYNK8">Junior Course</a>
           </li>
           <li className="text-lg">
-            <a href="https://forms.gle/aTN1LUUhjsZjFKGT8">
+            <a href="https://forms.gle/DLQGuKsehh7PRQya8">
               Intermediate Course
             </a>
           </li>
           <li className="text-lg">
-            <a href="https://forms.gle/aTN1LUUhjsZjFKGT8">Senior Course</a>
+            <a href="https://forms.gle/DLQGuKsehh7PRQya8">Senior Course</a>
           </li>
           <li className="text-lg">
-            <a href="https://forms.gle/aTN1LUUhjsZjFKGT8">
+            <a href="https://forms.gle/DLQGuKsehh7PRQya8">
               Web Development Course
             </a>
           </li>

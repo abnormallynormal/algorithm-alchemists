@@ -11,13 +11,13 @@ export default function Classes() {
   const courses = [
     {
       title: "Junior Course",
-      link: "https://forms.gle/2ArYqzRxoEvCuH1v8",
+      link: "https://forms.gle/HrZR4UVcb2nkYYNK8",
       img: beginner,
       color: "#3B82F6",
       level: "Beginner",
       duration: "12 weeks",
-      schedule: "Saturdays, 4:00 PM to 5:30 PM EST",
-      startDate: "July 19, 2025",
+      schedule: "Saturdays, 1:30 PM to 3:00 PM EST",
+      startDate: "November 22, 2025",
       details: {
         description: "Covers the basics of programming in Python.",
         whatYouLearn: [
@@ -37,13 +37,13 @@ export default function Classes() {
     },
     {
       title: "Intermediate Course",
-      link: "https://forms.gle/aTN1LUUhjsZjFKGT8",
+      link: "https://forms.gle/DLQGuKsehh7PRQya8",
       img: intermediate,
       color: "#E66A9B",
       level: "Intermediate",
       duration: "Runs until February 2026",
-      schedule: "Sundays, 8:00 PM to 9:30 PM EST",
-      startDate: "July 13, 2025",
+      schedule: "Sundays, 7:30 PM to 9:00 PM EST",
+      startDate: "November 23, 2025",
       details: {
         description:
           "Covers the basics of competitive programming in Python and Java​ in preparation for the CCC Junior Division.",
@@ -64,13 +64,13 @@ export default function Classes() {
     },
     {
       title: "Senior Course",
-      link: "https://forms.gle/aTN1LUUhjsZjFKGT8",
+      link: "https://forms.gle/DLQGuKsehh7PRQya8",
       img: advanced,
       color: "#F59E0B",
       level: "Advanced",
       duration: "Runs until February 2026",
-      schedule: "Wednesdays, 8:00 PM to 9:30 PM EST",
-      startDate: "July 16, 2025",
+      schedule: "Saturdays, 12:00 PM to 1:30 PM EST",
+      startDate: "November 22, 2025",
       details: {
         description:
           "Covers more advanced competitive programming concepts in Python, Java, C++ in preparation for the CCC Senior Division.",
@@ -89,17 +89,17 @@ export default function Classes() {
     },
     {
       title: "Web Development Course",
-      link: "https://forms.gle/aTN1LUUhjsZjFKGT8",
+      link: "https://forms.gle/DLQGuKsehh7PRQya8",
       img: webdev,
       color: "#8B5CF6",
       level: "All",
-      duration: "Runs until February 2026",
-      schedule: "Saturdays, 8:00 PM to 9:30 PM EST",
-      startDate: "July 12, 2025",
+      duration: "Runs until May 2026",
+      schedule: "Every other Friday, 7:00 PM to 8:30 PM EST",
+      startDate: "November 21, 2025",
       details: {
         description:
           "Covers all you need to create polished, functional websites, which are perfect for hackathons and personal projects!",
-        whatYouLearn: ["HTML", "CSS", "Git/GitHub", "APIs"],
+        whatYouLearn: ["HTML", "CSS", "Git/GitHub", "APIs", "React", "Node.js", "Frontend Development", "Backend Development"],
       },
     },
   ];
