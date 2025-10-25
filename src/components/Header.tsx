@@ -96,7 +96,6 @@ export default function Header() {
           </div>
         </motion.div>
 
-        {/* Scroll Down Indicator */}
         <motion.div
           className="absolute bottom-8 transform -translate-x-1/2 z-10"
           initial={{ opacity: 0, y: -4 }}
