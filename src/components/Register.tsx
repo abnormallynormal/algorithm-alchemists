@@ -80,7 +80,6 @@ export default function Register() {
               </a>
             </p>
           </div>
-          <div className="text-right">© 2025 Algorithm Alchemists</div>
         </div>
       </div>
     </div>

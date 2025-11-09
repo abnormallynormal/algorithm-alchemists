@@ -222,7 +222,7 @@ export default function Navigation(){
             className="text-white hover:text-gray-300 transition-colors text-lg"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            Our Team
+            Contact Us!
           </a>
           <a
             href="/sign-up"

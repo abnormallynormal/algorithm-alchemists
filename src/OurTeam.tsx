@@ -300,7 +300,6 @@ export default function OurTeam() {
               </a>
             </p>
           </div>
-          <div className="text-right">© 2025 Algorithm Alchemists</div>
         </div>
       </div>
       <div className="fixed inset-0 z-0">
