@@ -247,6 +247,7 @@ export default function OurTeam() {
               <a
                 href="mailto:algorithm.alchemists@gmail.com"
                 className="text-white hover:text-gray-300 transition-all duration-300 transform hover:scale-110 bg-white/10 p-3 rounded-full backdrop-blur-sm hover:bg-white/20"
+                target="_blank"
                 aria-label="Email us"
               >
                 <svg
