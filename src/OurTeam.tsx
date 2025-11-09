@@ -237,13 +237,15 @@ export default function OurTeam() {
           </SpotlightCard>
         </div>
       </div>
-      <div className="py-4 flex flex-row items-end justify-between relative z-20">
-        <div className="text-sm lg:text-md">Sponsored by Hack Club</div>
-        <div className="">
-          <div className="flex justify-end gap-4 mt-4 mb-2">
+      <div className=" py-8">
+        <div className="px-8 text-lg lg:text-2xl font-bold mb-3">Contact Us!</div>
+      <div className="px-8 flex flex-row justify-between items-end text-sm lg:text-md">
+         
+        <div>
+          <div className="flex gap-2 mb-4">
             <a
               href="mailto:algorithm.alchemists@gmail.com"
-              className="text-white hover:text-gray-300 transition-colors duration-300"
+              className="text-white hover:text-gray-300 transition-all duration-300 transform hover:scale-110 bg-white/10 p-3 rounded-full backdrop-blur-sm hover:bg-white/20"
               aria-label="Email us"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -252,7 +254,7 @@ export default function OurTeam() {
             </a>
             <a
               href="https://discord.gg/csb7pFSBKf"
-              className="text-white hover:text-blue-400 transition-colors duration-300"
+              className="text-white hover:text-blue-400 transition-all duration-300 transform hover:scale-110 bg-white/10 p-3 rounded-full backdrop-blur-sm hover:bg-blue-500/20"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Join our Discord"
@@ -265,7 +267,7 @@ export default function OurTeam() {
               href="https://www.instagram.com/algorithm.alchemists"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-pink-300 transition-all duration-300"
+              className="text-white hover:text-pink-300 transition-all duration-300 transform hover:scale-110 bg-white/10 p-3 rounded-full backdrop-blur-sm hover:bg-pink-500/20"
               aria-label="Follow us on Instagram"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -273,10 +275,20 @@ export default function OurTeam() {
               </svg>
             </a>
           </div>
-          <div className="text-right text-sm lg:text-md">
-            © 2025 Algorithm Alchemists
-          </div>
+          <p className="text-sm lg:text-md">
+          Sponsored by{" "}
+          <a
+            href="https://hackclub.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Hack Club Link"
+          >
+            Hack Club
+          </a>
+        </p>    
         </div>
+        <div className="text-right">© 2025 Algorithm Alchemists</div>   
+      </div>
       </div>
       <div className="fixed inset-0 z-0">
         <LightRays
