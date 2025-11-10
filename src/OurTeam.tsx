@@ -6,14 +6,16 @@ import brianGe from "./assets/pfps/brian ge.avif";
 import chloeChu from "./assets/pfps/chloe chu.avif";
 import elinaKhan from "./assets/pfps/elina khan.avif";
 import elizabethSoboleva from "./assets/pfps/elizabeth soboleva.avif";
-import ericWangPfp from "./assets/pfps/eric wang pfp.avif";
+import ericWangPfp from "./assets/pfps/eric wang new.avif";
 import ethanGuan from "./assets/pfps/ethan guan.avif";
 import ethanLeung from "./assets/pfps/ethan leung.avif";
 import evelynDam from "./assets/pfps/evelyn dam.avif";
 import jeffreyWang from "./assets/pfps/jeffrey wang.avif";
 import justinChou from "./assets/pfps/justin chou.avif";
+import justinWu from "./assets/pfps/justin wu.avif";
 import kaleyWu from "./assets/pfps/kaley wu.avif";
 import kyleZhou from "./assets/pfps/kyle zhou.avif";
+import patrickZhang from "./assets/pfps/patrick zhang.avif";
 import soroushPaidar from "./assets/pfps/soroush paidar.avif";
 import weizhongXia from "./assets/pfps/weizhong xia.avif";
 import zongqiaoZhou from "./assets/pfps/zongqiao zhou.avif";
@@ -92,7 +94,7 @@ export default function OurTeam() {
             slides={[
               {
                 name: "Eric Wang",
-                title: "President / Founder / Web Dev / Senior Class Teacher",
+                title: "President & Founder",
                 description:
                   "United States of America Computing Olympiad (USACO) Silver Division",
                 image: ericWangPfp,
@@ -100,15 +102,39 @@ export default function OurTeam() {
               {
                 name: "Jeffrey Wang",
                 title:
-                  "Vice-President / Co-Founder / Junior Class Head Teacher",
+                  "Vice-President & Founder / Junior Class Lead / Outreach Coordinator",
                 description:
                   "Canadian Computing Competition (CCC) Junior Division Distinction",
                 image: jeffreyWang,
               },
               {
                 name: "Ethan Leung",
-                title: "Vice-President / Web Dev / Intermediate Class Teacher",
+                title: "Vice-President / Intermediate Class Teacher / Marketing",
                 image: ethanLeung,
+              },
+              {
+                name: "Brian Ge",
+                title: "Intermediate Class Lead Teacher / Outreach Coordinator",
+                description:
+                  "Canadian Computing Competition (CCC) Senior Division Distinction",
+                image: brianGe,
+              },
+              {
+                name: "Ethan Guan",
+                title: "Senior Class Co-Lead",
+                image: ethanGuan,
+              },
+              {
+                name: "Justin Wen Hao Wu",
+                title: "Senior Class Co-Lead",
+                description:
+                  "Canadian Computing Competition (CCC) Junior Division Honour Roll",
+                image: justinWu,
+              },
+              {
+                name: "Patrick Zhang",
+                title: "Web Development Teacher",
+                image: patrickZhang,
               },
               {
                 name: "Elina Khan",
@@ -121,23 +147,10 @@ export default function OurTeam() {
                 image: chloeChu,
               },
               {
-                name: "Brian Ge",
-                title: "Intermediate Class Head Teacher",
-                description:
-                  "Canadian Computing Competition (CCC) Senior Division Distinction",
-                image: brianGe,
-              },
-              {
-                name: "Ethan Guan",
-                title: "Web Dev / Senior Class Teacher",
-                image: ethanGuan,
-              },
-              {
                 name: "Kaley Wu",
                 title: "Junior Class Teacher",
                 image: kaleyWu,
               },
-
               {
                 name: "Soroush Paidar",
                 title: "Junior Class Teacher",
