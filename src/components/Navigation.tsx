@@ -102,9 +102,7 @@ export default function Navigation(){
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-black/30 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
+        isScrolled ? "bg-black/30 backdrop-blur-md shadow-lg" : "bg-transparent"
       } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
     >
       <div className="flex justify-between items-center py-4 px-4 sm:px-6 lg:px-8">
@@ -141,6 +139,12 @@ export default function Navigation(){
             className="text-white hover:text-gray-300 transition-colors text-sm lg:text-base"
           >
             Our Team
+          </a>
+          <a
+            href="/events"
+            className="text-white hover:text-gray-300 transition-colors text-sm lg:text-base"
+          >
+            Events
           </a>
           <a
             href="/#registration"
@@ -216,6 +220,13 @@ export default function Navigation(){
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Our Team
+          </a>
+          <a
+            href="/events"
+            className="text-white hover:text-gray-300 transition-colors text-lg"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Events
           </a>
           <a
             href="/#registration"
