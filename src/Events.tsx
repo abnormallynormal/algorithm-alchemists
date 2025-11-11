@@ -29,7 +29,7 @@ export default function Events() {
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <div className="text-lg lg:text-xl xl:text-2xl font-semibold mb-16 text-center">
+            <div className="text-lg lg:text-xl xl:text-2xl font-semibold mb-8 lg:mb-16 text-center">
               Check out the events we've been to!
             </div>
           </motion.div>
