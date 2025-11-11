@@ -18,6 +18,7 @@ import kyleZhou from "./assets/pfps/kyle zhou.avif";
 import patrickZhang from "./assets/pfps/patrick zhang.avif";
 import soroushPaidar from "./assets/pfps/soroush paidar.avif";
 import weizhongXia from "./assets/pfps/weizhong xia.avif";
+import yichenXiao from "./assets/pfps/yichen xiao.avif";
 import zongqiaoZhou from "./assets/pfps/zongqiao zhou.avif";
 import EmblaCarousel from "./components/EmblaCarousel";
 import SpotlightCard from "./components/SpotlightCard";
@@ -118,6 +119,13 @@ export default function OurTeam() {
                 description:
                   "Canadian Computing Competition (CCC) Senior Division Distinction",
                 image: brianGe,
+              },
+              {
+                name: "Yichen Xiao",
+                title: "Web Dev Lead Teacher / Website Developer",
+                description:
+                  "Canadian Computing Competition (CCC) Senior Division Distinction",
+                image: yichenXiao,
               },
               {
                 name: "Ethan Guan",
