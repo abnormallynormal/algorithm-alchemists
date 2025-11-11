@@ -41,7 +41,7 @@ export default function Reviews() {
   };
 
   return (
-    <div className="px-8 lg:px-16 xl:px-24 pt-12 lg:pt-18">
+    <div className="px-8 lg:px-16 xl:px-24 ">
       <motion.div 
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
