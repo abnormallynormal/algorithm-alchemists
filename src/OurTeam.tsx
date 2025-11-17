@@ -16,7 +16,9 @@ import justinWu from "./assets/pfps/justin wu.avif";
 import kaleyWu from "./assets/pfps/kaley wu.avif";
 import kyleZhou from "./assets/pfps/kyle zhou.avif";
 import patrickZhang from "./assets/pfps/patrick zhang.avif";
-import soroushPaidar from "./assets/pfps/soroush paidar.avif";
+import soroushPaidar from "./assets/pfps/soroush paidar new.avif";
+import siddhMistry from "./assets/pfps/siddh mistry.avif";
+import garyFu from "./assets/pfps/gary fu.avif";
 import weizhongXia from "./assets/pfps/weizhong xia.avif";
 import yichenXiao from "./assets/pfps/yichen xiao.avif";
 import zongqiaoZhou from "./assets/pfps/zongqiao zhou.avif";
@@ -163,6 +165,16 @@ export default function OurTeam() {
                 name: "Soroush Paidar",
                 title: "Junior Class Teacher",
                 image: soroushPaidar,
+              },
+              {
+                name: "Siddh Mistry",
+                title: "Intermediate Class Teacher",
+                image: siddhMistry,
+              },
+              {
+                name: "Gary Fu",
+                title: "Intermediate Class Teacher",
+                image: garyFu,
               },
               {
                 name: "Brandon Lam",
