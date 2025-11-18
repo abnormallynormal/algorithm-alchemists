@@ -117,7 +117,7 @@ export default function OurTeam() {
               },
               {
                 name: "Brian Ge",
-                title: "Intermediate Class Lead Teacher / Outreach Coordinator",
+                title: "Senior Class Lead Teacher / Intermediate Teacher / Outreach Coordinator",
                 description:
                   "Canadian Computing Competition (CCC) Senior Division Distinction",
                 image: brianGe,
@@ -131,12 +131,12 @@ export default function OurTeam() {
               },
               {
                 name: "Ethan Guan",
-                title: "Senior Class Co-Lead",
+                title: "Senior Class Teacher",
                 image: ethanGuan,
               },
               {
                 name: "Justin Wen Hao Wu",
-                title: "Senior Class Co-Lead",
+                title: "Senior Class Teacher",
                 description:
                   "Canadian Computing Competition (CCC) Junior Division Honour Roll",
                 image: justinWu,
