@@ -16,8 +16,11 @@ import justinWu from "./assets/pfps/justin wu.avif";
 import kaleyWu from "./assets/pfps/kaley wu.avif";
 import kyleZhou from "./assets/pfps/kyle zhou.avif";
 import patrickZhang from "./assets/pfps/patrick zhang.avif";
-import soroushPaidar from "./assets/pfps/soroush paidar.avif";
+import soroushPaidar from "./assets/pfps/soroush paidar new.avif";
+import siddhMistry from "./assets/pfps/siddh mistry.avif";
+import garyFu from "./assets/pfps/gary fu.avif";
 import weizhongXia from "./assets/pfps/weizhong xia.avif";
+import yichenXiao from "./assets/pfps/yichen xiao.avif";
 import zongqiaoZhou from "./assets/pfps/zongqiao zhou.avif";
 import EmblaCarousel from "./components/EmblaCarousel";
 import SpotlightCard from "./components/SpotlightCard";
@@ -114,19 +117,26 @@ export default function OurTeam() {
               },
               {
                 name: "Brian Ge",
-                title: "Intermediate Class Lead Teacher / Outreach Coordinator",
+                title: "Senior Class Lead Teacher / Intermediate Teacher / Outreach Coordinator",
                 description:
                   "Canadian Computing Competition (CCC) Senior Division Distinction",
                 image: brianGe,
               },
               {
+                name: "Yichen Xiao",
+                title: "Web Dev Lead Teacher / Website Developer",
+                description:
+                  "Canadian Computing Competition (CCC) Senior Division Distinction",
+                image: yichenXiao,
+              },
+              {
                 name: "Ethan Guan",
-                title: "Senior Class Co-Lead",
+                title: "Senior Class Teacher",
                 image: ethanGuan,
               },
               {
                 name: "Justin Wen Hao Wu",
-                title: "Senior Class Co-Lead",
+                title: "Senior Class Teacher",
                 description:
                   "Canadian Computing Competition (CCC) Junior Division Honour Roll",
                 image: justinWu,
@@ -155,6 +165,16 @@ export default function OurTeam() {
                 name: "Soroush Paidar",
                 title: "Junior Class Teacher",
                 image: soroushPaidar,
+              },
+              {
+                name: "Siddh Mistry",
+                title: "Intermediate Class Teacher",
+                image: siddhMistry,
+              },
+              {
+                name: "Gary Fu",
+                title: "Intermediate Class Teacher",
+                image: garyFu,
               },
               {
                 name: "Brandon Lam",
