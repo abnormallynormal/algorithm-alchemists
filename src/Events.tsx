@@ -5,6 +5,8 @@ import img1 from "./assets/event-pics/img1.jpg";
 import img2 from "./assets/event-pics/img2.jpg";
 import img3 from "./assets/event-pics/img3.jpg";
 import img4 from "./assets/event-pics/img4.jpg";
+import lebron from "./assets/event-pics/lebron.jpg"
+import patrick from "./assets/event-pics/patrick.jpg"
 export default function Events() {
   return (
     <div className="">
@@ -120,6 +122,45 @@ export default function Events() {
                   mentors and supporters eager to help inspire the next
                   generation of young innovators.
                 </div>
+              </div>
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div className="grid xl:grid-cols-[1fr_auto] gap-12 mb-12 sm:mb-24 items-center">
+              <div>
+                <div className="text-md lg:text-xl xl:text-2xl font-bold mb-4">
+                  CUTC x Caffeine.ai Promptathon
+                </div>
+                <div className="text-sm lg:text-md">
+                  On November 22, 2025, Algorithm Alchemists attended the CUTC x
+                  Caffeine.ai Promptathon showcased on Luma. As a nonprofit that
+                  teaches younger students how to code, we led an introductory
+                  session showing participants how AI-assisted coding can make
+                  building apps more accessible. We taught students how to
+                  structure effective prompts, turn ideas into functional
+                  prototypes, and understand the logic behind the code generated
+                  for them. By bringing guidance, mentorship, and easy-to-use
+                  tools, we helped students gain confidence in using modern
+                  coding workflows—transforming curiosity into real, hands-on
+                  creation.
+                </div>
+              </div>
+              <div className="flex flex-col sm:flex-row items-center gap-4 justify-center">
+                <img
+                  src={patrick}
+                  alt="Event 1"
+                  className="w-64 h-48 md:w-72 md:h-64 lg:w-80 lg:h-72 xl:w-96 xl:h-80 rounded-md object-cover"
+                />
+                <img
+                  src={lebron}
+                  alt="Event 2"
+                  className="w-64 h-48 md:w-72 md:h-64 lg:w-80 lg:h-72 xl:w-96 xl:h-80 rounded-md object-cover"
+                />
               </div>
             </div>
           </motion.div>
