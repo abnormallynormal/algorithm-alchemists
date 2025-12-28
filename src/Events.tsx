@@ -5,8 +5,10 @@ import img1 from "./assets/event-pics/img1.jpg";
 import img2 from "./assets/event-pics/img2.jpg";
 import img3 from "./assets/event-pics/img3.jpg";
 import img4 from "./assets/event-pics/img4.jpg";
-import lebron from "./assets/event-pics/lebron.jpg"
-import patrick from "./assets/event-pics/patrick.jpg"
+import lebron from "./assets/event-pics/lebron.jpg";
+import patrick from "./assets/event-pics/patrick.jpg";
+import globeicon from "./assets/event-pics/globeicon.jpg";
+import bryce from "./assets/event-pics/bryce james.png";
 export default function Events() {
   return (
     <div className="">
@@ -161,6 +163,69 @@ export default function Events() {
                   alt="Event 2"
                   className="w-64 h-48 md:w-72 md:h-64 lg:w-80 lg:h-72 xl:w-96 xl:h-80 rounded-md object-cover"
                 />
+              </div>
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div className="mb-12 xl:hidden">
+              <div className="text-md lg:text-xl xl:text-2xl font-bold mb-4">
+                Learning For Our Future Podcast
+              </div>
+              <div className="text-sm lg:text-md">
+                On November 24, 2025, Algorithm Alchemists were featured on the
+                Leaders For Our Future podcast, supported by Ocean Wise. The
+                podcast highlights stories of conservation, innovation, and
+                leadership across Canada, raising awareness of ocean and water
+                issues. During the episode, we discussed how technology can be
+                used to protect ecosystems, the environmental impact of AI, and
+                how youth can leverage coding skills for positive change. Our
+                conversation covered topics including sustainable AI practices,
+                the hidden water and energy costs of data centers, and practical
+                ways students can use technology to address environmental
+                challenges. By sharing insights from our work teaching coding to
+                youth, we emphasized how technology can empower the next
+                generation to turn curiosity into meaningful action for the
+                planet.
+              </div>
+            </div>
+            <div className="grid xl:grid-cols-[auto_1fr] gap-12 mb-12 items-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <img
+                  src={bryce}
+                  alt="Event 3"
+                  className="w-64 h-48 md:w-72 md:h-64 lg:w-80 lg:h-72 xl:w-96 xl:h-80 rounded-md object-cover"
+                />
+                <img
+                  src={globeicon}
+                  alt="Event 4"
+                  className="w-64 h-48 md:w-72 md:h-64 lg:w-80 lg:h-72 xl:w-96 xl:h-80 rounded-md object-cover"
+                />
+              </div>
+              <div className="hidden xl:block">
+                <div className="text-md lg:text-xl xl:text-2xl font-bold mb-4">
+                  Learning For Our Future Podcast
+                </div>
+                <div className="text-sm lg:text-md">
+                  On November 24, 2025, Algorithm Alchemists were featured on
+                  the Leaders For Our Future podcast, supported by Ocean Wise.
+                  The podcast highlights stories of conservation, innovation,
+                  and leadership across Canada, raising awareness of ocean and
+                  water issues. During the episode, we discussed how technology
+                  can be used to protect ecosystems, the environmental impact of
+                  AI, and how youth can leverage coding skills for positive
+                  change. Our conversation covered topics including sustainable
+                  AI practices, the hidden water and energy costs of data
+                  centers, and practical ways students can use technology to
+                  address environmental challenges. By sharing insights from our
+                  work teaching coding to youth, we emphasized how technology
+                  can empower the next generation to turn curiosity into
+                  meaningful action for the planet.
+                </div>
               </div>
             </div>
           </motion.div>
