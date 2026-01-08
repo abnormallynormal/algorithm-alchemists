@@ -7,7 +7,7 @@ import img3 from "./assets/event-pics/img3.jpg";
 import img4 from "./assets/event-pics/img4.jpg";
 import lebron from "./assets/event-pics/lebron.jpg";
 import patrick from "./assets/event-pics/patrick.jpg";
-import globeicon from "./assets/event-pics/globeicon.jpg";
+import LEBRON from "./assets/event-pics/QLEBRONNNN.jpg";
 import bryce from "./assets/event-pics/bryce james.png";
 export default function Events() {
   return (
@@ -199,12 +199,16 @@ export default function Events() {
                   src={bryce}
                   alt="Event 3"
                   className="w-64 h-48 md:w-72 md:h-64 lg:w-80 lg:h-72 xl:w-96 xl:h-80 rounded-md object-cover"
+                  style={{objectPosition: "center 90%"}}
                 />
-                <img
-                  src={globeicon}
-                  alt="Event 4"
-                  className="w-64 h-48 md:w-72 md:h-64 lg:w-80 lg:h-72 xl:w-96 xl:h-80 rounded-md object-cover"
-                />
+                <div className="w-64 h-48 md:w-72 md:h-64 lg:w-80 lg:h-72 xl:w-96 xl:h-80 rounded-md overflow-hidden">
+                  <img
+                    src={LEBRON}
+                    alt="Event 4"
+                    className="w-full h-full object-cover"
+                    style={{objectPosition: "center 40%", transform: "scale(1.075)"}}
+                  />
+                </div>
               </div>
               <div className="hidden xl:block">
                 <div className="text-md lg:text-xl xl:text-2xl font-bold mb-4">
