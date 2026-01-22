@@ -67,10 +67,11 @@ export default function OurTeam() {
               excellence and innovation.
             </div>
             <div className="mb-4 px-8 text-md lg:text-lg text-center">
-              Our team of dedicated teachers has consistently excelled in
-              prestigious competitions, such as the Canadian Computing
-              Competition (CCC) and the United States Computing Olympiad
-              (USACO).{" "}
+              Since our founding, we have reached over 100,000 people through
+              our programs, resources, and outreach initiatives. Our team of
+              dedicated teachers has consistently excelled in prestigious
+              competitions, such as the Canadian Computing Competition (CCC) and
+              the United States Computing Olympiad (USACO).{" "}
               <b>
                 {" "}
                 In the 2025 CCC, we proudly guided over 30 students to earn
@@ -112,12 +113,14 @@ export default function OurTeam() {
               },
               {
                 name: "Ethan Leung",
-                title: "Vice-President / Intermediate Class Teacher / Marketing",
+                title:
+                  "Vice-President / Intermediate Class Teacher / Marketing",
                 image: ethanLeung,
               },
               {
                 name: "Brian Ge",
-                title: "Senior Class Lead Teacher / Intermediate Teacher / Outreach Coordinator",
+                title:
+                  "Senior Class Lead Teacher / Intermediate Teacher / Outreach Coordinator",
                 description:
                   "Canadian Computing Competition (CCC) Senior Division Distinction",
                 image: brianGe,
