@@ -1,7 +1,7 @@
 "use client";
 import { motion, easeOut } from "framer-motion";
 import SpotlightCard from "./SpotlightCard";
-import fivestars from "../assets/5_stars.svg.png";
+import fivestars from "../assets/5_stars.png";
 
 export default function Reviews() {
   const reviews = [
