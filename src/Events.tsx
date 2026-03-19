@@ -5,10 +5,13 @@ import img1 from "./assets/event-pics/img1.jpg";
 import img2 from "./assets/event-pics/img2.jpg";
 import img3 from "./assets/event-pics/img3.jpg";
 import img4 from "./assets/event-pics/img4.jpg";
-import lebron from "./assets/event-pics/lebron.jpg";
-import patrick from "./assets/event-pics/patrick.jpg";
-import LEBRON from "./assets/event-pics/QLEBRONNNN.jpg";
-import bryce from "./assets/event-pics/bryce james.png";
+import img5 from "./assets/event-pics/img5.jpg";
+import img6 from "./assets/event-pics/img6.jpg";
+import img7 from "./assets/event-pics/img7.png";
+import img8 from "./assets/event-pics/img8.jpg";
+import img9 from "./assets/event-pics/img9.webp";
+import img10 from "./assets/event-pics/img10.webp";
+
 export default function Events() {
   return (
     <div className="">
@@ -154,13 +157,13 @@ export default function Events() {
               </div>
               <div className="flex flex-col sm:flex-row items-center gap-4 justify-center">
                 <img
-                  src={patrick}
-                  alt="Event 1"
+                  src={img5}
+                  alt="Event 5"
                   className="w-64 h-48 md:w-72 md:h-64 lg:w-80 lg:h-72 xl:w-96 xl:h-80 rounded-md object-cover"
                 />
                 <img
-                  src={lebron}
-                  alt="Event 2"
+                  src={img6}
+                  alt="Event 6"
                   className="w-64 h-48 md:w-72 md:h-64 lg:w-80 lg:h-72 xl:w-96 xl:h-80 rounded-md object-cover"
                 />
               </div>
@@ -196,15 +199,15 @@ export default function Events() {
             <div className="grid xl:grid-cols-[auto_1fr] gap-12 mb-12 items-center">
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <img
-                  src={bryce}
-                  alt="Event 3"
+                  src={img7}
+                  alt="Event 7"
                   className="w-64 h-48 md:w-72 md:h-64 lg:w-80 lg:h-72 xl:w-96 xl:h-80 rounded-md object-cover"
                   style={{objectPosition: "center 90%"}}
                 />
                 <div className="w-64 h-48 md:w-72 md:h-64 lg:w-80 lg:h-72 xl:w-96 xl:h-80 rounded-md overflow-hidden">
                   <img
-                    src={LEBRON}
-                    alt="Event 4"
+                    src={img8}
+                    alt="Event 8"
                     className="w-full h-full object-cover"
                     style={{objectPosition: "center 40%", transform: "scale(1.075)"}}
                   />
@@ -230,6 +233,43 @@ export default function Events() {
                   can empower the next generation to turn curiosity into
                   meaningful action for the planet.
                 </div>
+              </div>
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div className="mb-12 xl:hidden">
+              <div className="text-md lg:text-xl xl:text-2xl font-bold mb-4">
+                Facilitating on Purpose Podcast
+              </div>
+              <div className="text-sm lg:text-md">
+                On March 4, 2026, Algorithm Alchemists founder Eric Wang joined the Facilitating on Purpose podcast hosted by learning designer Beth Cougler Blom. He shared the story behind Algorithm Alchemists and how it delivers engaging, peer-led coding workshops for elementary and high school students. The conversation highlighted how purposeful facilitation (through hands-on activities and active participation) makes programming more accessible and motivating. Eric also emphasized the organization's mentorship culture, where former students return as volunteer instructors, fostering a supportive and sustainable learning community.
+              </div>
+            </div>
+            <div className="grid xl:grid-cols-[1fr_auto] gap-12 mb-12 sm:mb-24 items-center">
+              <div className="hidden xl:block">
+                <div className="text-md lg:text-xl xl:text-2xl font-bold mb-4">
+                  Facilitating on Purpose Podcast
+                </div>
+                <div className="text-sm lg:text-md">
+                  On March 4, 2026, Algorithm Alchemists founder Eric Wang joined the Facilitating on Purpose podcast hosted by learning designer Beth Cougler Blom. He shared the story behind Algorithm Alchemists and how it delivers engaging, peer-led coding workshops for elementary and high school students. The conversation highlighted how purposeful facilitation (through hands-on activities and active participation) makes programming more accessible and motivating. Eric also emphasized the organization's mentorship culture, where former students return as volunteer instructors, fostering a supportive and sustainable learning community.
+                </div>
+              </div>
+              <div className="flex flex-col sm:flex-row items-center gap-4 justify-center order-2 lg:order-1">
+                <img
+                  src={img9}
+                  alt="Event 9"
+                  className="w-64 h-48 md:w-72 md:h-64 lg:w-80 lg:h-72 xl:w-96 xl:h-80 rounded-md object-cover"
+                />
+                <img
+                  src={img10}
+                  alt="Event 10"
+                  className="w-64 h-48 md:w-72 md:h-64 lg:w-80 lg:h-72 xl:w-96 xl:h-80 rounded-md object-cover"
+                />
               </div>
             </div>
           </motion.div>
