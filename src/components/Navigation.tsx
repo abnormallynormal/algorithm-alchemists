@@ -147,10 +147,10 @@ export default function Navigation(){
             Events
           </a>
           <a
-            href="/#registration"
+            href="/contact"
             className="text-white hover:text-gray-300 transition-colors text-sm lg:text-base"
           >
-            Contact Us
+            Contact
           </a>
           <a
             href="/sign-up"
@@ -229,11 +229,11 @@ export default function Navigation(){
             Events
           </a>
           <a
-            href="/#registration"
+            href="/contact"
             className="text-white hover:text-gray-300 transition-colors text-lg"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            Contact Us!
+            Contact
           </a>
           <a
             href="/sign-up"
