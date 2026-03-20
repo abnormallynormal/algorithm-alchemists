@@ -29,9 +29,19 @@ export default function Contact() {
                 <span className="text-sm opacity-80">algorithm.alchemists@gmail.com</span>
               </a>
             </div>
-            <p className="text-sm lg:text-md">
-              Want to support our mission? Check out our <a href="/sign-up" className="text-white underline">Sign Up</a> page for class info, or explore <a href="/our-team" className="text-white underline">our team</a>.
-            </p>
+            <div className="mb-8">
+              <p className="mb-4">
+                Interested in volunteering with Algorithm Alchemists? Fill out our volunteer form and we will be in touch.
+              </p>
+              <a
+                href="https://forms.gle/smo5FH8unWtaScy57"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300"
+              >
+                Volunteer With Us
+              </a>
+            </div>
           </div>
         </div>
 
