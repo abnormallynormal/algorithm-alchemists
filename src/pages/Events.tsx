@@ -1,17 +1,17 @@
-import LightRays from "./components/LightRays";
-import Navigation from "./components/Navigation";
-import Footer from "./components/Footer";
+import LightRays from "../components/LightRays";
+import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
 import { motion } from "motion/react";
-import img1 from "./assets/event-pics/img1.jpg";
-import img2 from "./assets/event-pics/img2.jpg";
-import img3 from "./assets/event-pics/img3.jpg";
-import img4 from "./assets/event-pics/img4.jpg";
-import img5 from "./assets/event-pics/img5.jpg";
-import img6 from "./assets/event-pics/img6.jpg";
-import img7 from "./assets/event-pics/img7.png";
-import img8 from "./assets/event-pics/img8.jpg";
-import img9 from "./assets/event-pics/img9.webp";
-import img10 from "./assets/event-pics/img10.webp";
+import img1 from "../assets/event-pics/img1.jpg";
+import img2 from "../assets/event-pics/img2.jpg";
+import img3 from "../assets/event-pics/img3.jpg";
+import img4 from "../assets/event-pics/img4.jpg";
+import img5 from "../assets/event-pics/img5.jpg";
+import img6 from "../assets/event-pics/img6.jpg";
+import img7 from "../assets/event-pics/img7.png";
+import img8 from "../assets/event-pics/img8.jpg";
+import img9 from "../assets/event-pics/img9.webp";
+import img10 from "../assets/event-pics/img10.webp";
 
 export default function Events() {
   return (
@@ -203,14 +203,17 @@ export default function Events() {
                   src={img7}
                   alt="Event 7"
                   className="w-64 h-48 md:w-72 md:h-64 lg:w-80 lg:h-72 xl:w-96 xl:h-80 rounded-md object-cover"
-                  style={{objectPosition: "center 90%"}}
+                  style={{ objectPosition: "center 90%" }}
                 />
                 <div className="w-64 h-48 md:w-72 md:h-64 lg:w-80 lg:h-72 xl:w-96 xl:h-80 rounded-md overflow-hidden">
                   <img
                     src={img8}
                     alt="Event 8"
                     className="w-full h-full object-cover"
-                    style={{objectPosition: "center 40%", transform: "scale(1.075)"}}
+                    style={{
+                      objectPosition: "center 40%",
+                      transform: "scale(1.075)",
+                    }}
                   />
                 </div>
               </div>
@@ -248,7 +251,17 @@ export default function Events() {
                 Facilitating on Purpose Podcast
               </div>
               <div className="text-sm lg:text-md">
-                On March 4, 2026, Algorithm Alchemists founder Eric Wang joined the Facilitating on Purpose podcast hosted by learning designer Beth Cougler Blom. He shared the story behind Algorithm Alchemists and how it delivers engaging, peer-led coding workshops for elementary and high school students. The conversation highlighted how purposeful facilitation (through hands-on activities and active participation) makes programming more accessible and motivating. Eric also emphasized the organization's mentorship culture, where former students return as volunteer instructors, fostering a supportive and sustainable learning community.
+                On March 4, 2026, Algorithm Alchemists founder Eric Wang joined
+                the Facilitating on Purpose podcast hosted by learning designer
+                Beth Cougler Blom. He shared the story behind Algorithm
+                Alchemists and how it delivers engaging, peer-led coding
+                workshops for elementary and high school students. The
+                conversation highlighted how purposeful facilitation (through
+                hands-on activities and active participation) makes programming
+                more accessible and motivating. Eric also emphasized the
+                organization's mentorship culture, where former students return
+                as volunteer instructors, fostering a supportive and sustainable
+                learning community.
               </div>
             </div>
             <div className="grid xl:grid-cols-[1fr_auto] gap-12 mb-12 sm:mb-24 items-center">
@@ -257,7 +270,17 @@ export default function Events() {
                   Facilitating on Purpose Podcast
                 </div>
                 <div className="text-sm lg:text-md">
-                  On March 4, 2026, Algorithm Alchemists founder Eric Wang joined the Facilitating on Purpose podcast hosted by learning designer Beth Cougler Blom. He shared the story behind Algorithm Alchemists and how it delivers engaging, peer-led coding workshops for elementary and high school students. The conversation highlighted how purposeful facilitation (through hands-on activities and active participation) makes programming more accessible and motivating. Eric also emphasized the organization's mentorship culture, where former students return as volunteer instructors, fostering a supportive and sustainable learning community.
+                  On March 4, 2026, Algorithm Alchemists founder Eric Wang
+                  joined the Facilitating on Purpose podcast hosted by learning
+                  designer Beth Cougler Blom. He shared the story behind
+                  Algorithm Alchemists and how it delivers engaging, peer-led
+                  coding workshops for elementary and high school students. The
+                  conversation highlighted how purposeful facilitation (through
+                  hands-on activities and active participation) makes
+                  programming more accessible and motivating. Eric also
+                  emphasized the organization's mentorship culture, where former
+                  students return as volunteer instructors, fostering a
+                  supportive and sustainable learning community.
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row items-center gap-4 justify-center order-2 lg:order-1">

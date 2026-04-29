@@ -1,6 +1,6 @@
-import LightRays from "./components/LightRays";
-import Navigation from "./components/Navigation";
-import Footer from "./components/Footer";
+import LightRays from "../components/LightRays";
+import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
 
 export default function Contact() {
   return (
