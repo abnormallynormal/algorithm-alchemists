@@ -1,24 +1,23 @@
-import type { TutorProfile } from "../../types/course";
+import { getTutorById } from "../../database/utils";
 
 interface ProfileProp {
-  profile: TutorProfile | string;
+  id: string;
 }
 
-export default function MinimizedTutorProfile({ profile }: ProfileProp) {
-  if (typeof profile === "string") return profile;
+export default function MinimizedTutorProfile({ id }: ProfileProp) {
+  const tutor = getTutorById(id);
 
   return (
     <>
-      {profile.avatar && (
+      {tutor.avatar && (
         <img
           className="w-8 h-8 rounded-full border border-white/10"
           data-alt="Close up portrait of creative director woman with vibrant studio lighting"
-          src={profile.avatar}
+          src={tutor.avatar}
         />
       )}
-
-      <span className="text-xs text-slate-400">
-        {profile.preferredName ?? profile.firstName + " " + profile.lastName}
+      <span className="pl-2 text-xs text-slate-400">
+        {tutor.preferredName ?? tutor.firstName + " " + tutor.lastName}
       </span>
     </>
   );

@@ -1,4 +1,4 @@
-import type { Form } from "./types/form";
+import type { Form } from "../types/form/form";
 
 interface FormProp {
   form?: Form;
@@ -82,7 +82,7 @@ export default function SignupForm({ form }: FormProp) {
             </div>
             <div className="flex items-center pt-base">
               <input
-                className="rounded bg-surface-container-highest border-none text-secondary-container focus:ring-offset-surface"
+                className="pr-3 rounded bg-surface-container-highest border-none text-secondary-container focus:ring-offset-surface"
                 id="terms"
                 type="checkbox"
               />
@@ -90,11 +90,11 @@ export default function SignupForm({ form }: FormProp) {
                 className="gap-sm font-body-md text-sm text-on-surface-variant"
                 htmlFor="terms"
               >
-                I agree to the
+                I agree to the{" "}
                 <a className="text-white hover:underline" href="#">
                   Terms of Alchemy
-                </a>
-                and
+                </a>{" "}
+                and{" "}
                 <a className="text-white hover:underline" href="#">
                   Privacy Logic
                 </a>

@@ -11,8 +11,8 @@ export default function Header() {
       setIsAtTop(window.scrollY <= 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -67,7 +67,7 @@ export default function Header() {
             interesting problems, and connecting with a thriving community.
           </div>
           <div className="flex gap-4 mt-4 justify-center text-sm lg:text-md xl:text-lg">
-            <a href="/sign-up">
+            <a href="/courses">
               <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200">
                 Sign Up Now
               </button>

@@ -1,20 +1,13 @@
-import type { ReactNode } from "react";
+import type { Tag } from "./tag";
 
-export interface Tag {
-  title: string;
-  textColor: string;
-
-  backgroundColor: string;
-}
-
-export interface TutorProfile {
-  firstName: string;
-  lastName: string;
-
-  preferredName?: string;
-
-  avatar?: string;
-}
+export type WEEKDAYS =
+  | "Monday"
+  | "Tuesday"
+  | "Wednesday"
+  | "Thursday"
+  | "Friday"
+  | "Saturday"
+  | "Sunday";
 
 export interface Course {
   id: string;
@@ -26,5 +19,16 @@ export interface Course {
 
   tags?: Tag[];
 
-  instructors: TutorProfile[] | string[];
+  instructors: string[]; // tutor ids
+
+  currentSession: number;
+  totalSessions: number;
+
+  startDate: string;
+  endDate: string;
+
+  courseWeekDay: WEEKDAYS;
+  courseTimeStart: string;
+  courseTimeEnd: string;
+  reccursEvery: string;
 }

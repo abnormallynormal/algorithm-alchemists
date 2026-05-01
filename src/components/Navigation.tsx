@@ -1,101 +1,103 @@
 import { useEffect, useState } from "react";
-import logo from "../../public/favicon.png"
+import logo from "../../public/favicon.png";
 
-export default function Navigation(){
+export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMouseNearTop, setIsMouseNearTop] = useState(false);
-  const [lastTrigger, setLastTrigger] = useState('scroll');
-  const [lastScrollDirection, setLastScrollDirection] = useState<'up' | 'down' | null>(null);
+  const [lastTrigger, setLastTrigger] = useState("scroll");
+  const [lastScrollDirection, setLastScrollDirection] = useState<
+    "up" | "down" | null
+  >(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   useEffect(() => {
     const isMobile = window.innerWidth < 768; // md breakpoint
-    
+
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      
+
       // Check if scrolled from top
       setIsScrolled(scrollTop > 50);
-      
+
       // On mobile, always keep navbar visible
       if (isMobile) {
         setIsVisible(true);
         setLastScrollY(scrollTop);
         return;
       }
-      
+
       // Desktop scroll behavior (existing logic)
       // Track scroll direction
-      let scrollDirection: 'up' | 'down' | null = null;
+      let scrollDirection: "up" | "down" | null = null;
       if (scrollTop > lastScrollY) {
-        scrollDirection = 'down';
+        scrollDirection = "down";
       } else if (scrollTop < lastScrollY) {
-        scrollDirection = 'up';
+        scrollDirection = "up";
       }
-      
+
       if (scrollDirection) {
         setLastScrollDirection(scrollDirection);
       }
-      
+
       // If at the very top, always show navbar regardless of mouse position
       if (scrollTop <= 100) {
         setIsVisible(true);
-        setLastTrigger('scroll');
+        setLastTrigger("scroll");
       } else {
         // Check scroll direction only when not at top
-        if (scrollDirection === 'down') {
+        if (scrollDirection === "down") {
           // Scrolling down & past threshold - hide navbar (unless mouse is near top)
           // Always hide on downward scroll regardless of trigger, unless mouse is actively near top
           if (!isMouseNearTop) {
             setIsVisible(false);
-            setLastTrigger('scroll');
+            setLastTrigger("scroll");
           }
-        } else if (scrollDirection === 'up') {
+        } else if (scrollDirection === "up") {
           // Scrolling up - show navbar
           setIsVisible(true);
-          setLastTrigger('scroll');
+          setLastTrigger("scroll");
         }
       }
-      
+
       setLastScrollY(scrollTop);
     };
 
     const handleMouseMove = (e: MouseEvent) => {
       // Skip mouse logic on mobile
       if (isMobile) return;
-      
+
       const scrollTop = window.scrollY;
       const mouseY = e.clientY;
       const isNearTop = mouseY <= 80; // Show when mouse is within 80px of top
-      
+
       setIsMouseNearTop(isNearTop);
-      
+
       // Only handle mouse logic if we're not at the very top of the page
       if (scrollTop > 100) {
         // Show navbar when mouse is near top, even if scrolled down
         if (isNearTop) {
           setIsVisible(true);
-          setLastTrigger('mouse')
-        } else if (!isNearTop && lastTrigger === 'mouse') {
+          setLastTrigger("mouse");
+        } else if (!isNearTop && lastTrigger === "mouse") {
           // Only hide if the last scroll direction was down
           // If last scroll was up, keep the navbar visible
-          if (lastScrollDirection === 'down') {
+          if (lastScrollDirection === "down") {
             setIsVisible(false);
           }
         }
       }
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('mousemove', handleMouseMove, { passive: true });
-    
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+
     // Check initial scroll position
     handleScroll();
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, [lastScrollY, isMouseNearTop, lastScrollDirection]);
 
@@ -236,7 +238,7 @@ export default function Navigation(){
             Contact
           </a>
           <a
-            href="/sign-up"
+            href="/courses"
             className="text-white hover:text-gray-300 transition-colors"
             onClick={() => setIsMobileMenuOpen(false)}
           >
