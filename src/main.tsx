@@ -8,6 +8,7 @@ import Contact from "./pages/Contact.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CourseListPage from "./pages/CourseListPage.tsx";
 import CourseFormPage from "./pages/CourseFormPage.tsx";
+import CourseDiscoveryPage from "./pages/CourseDiscoveryPage.tsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -15,7 +16,8 @@ const router = createBrowserRouter([
   { path: "/contact", element: <Contact /> },
   { path: "/courses", element: <CourseListPage /> },
   { path: "/events", element: <Events /> },
-  { path: "/forms/:formId", element: <CourseFormPage /> },
+  { path: "/forms/:slug", element: <CourseFormPage /> },
+  { path: "/discover", element: <CourseDiscoveryPage /> },
 ]);
 
 createRoot(document.getElementById("root")!).render(

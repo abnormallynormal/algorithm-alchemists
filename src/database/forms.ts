@@ -15,6 +15,7 @@ export const FORMS: Form[] = [
         header: "Your Experience",
         questions: [
           {
+            id: "first",
             type: "select",
             question: "Which resources did you use during the course?",
             placeholder: "",
@@ -26,13 +27,16 @@ export const FORMS: Form[] = [
               "Sandbox Environment",
             ],
             other: true,
+            optional: true,
           },
           {
+            id: "second",
             type: "long-answer",
             question: "What did you enjoy most about the course?",
             placeholder: "Write your thoughts...",
             lines: 5,
             characterLimit: 500,
+            optional: true,
           },
         ],
       },
@@ -42,11 +46,13 @@ export const FORMS: Form[] = [
         header: "Improvement",
         questions: [
           {
+            id: "third",
             type: "long-answer",
             question: "What could be improved?",
             placeholder: "Be honest — we appreciate it!",
             lines: 5,
             wordLimit: 120,
+            optional: false,
           },
         ],
       },

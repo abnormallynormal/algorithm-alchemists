@@ -1,10 +1,10 @@
-import About from "./components/About";
-import Header from "./components/Header";
-import LightRays from "./components/LightRays";
-import Navigation from "./components/Navigation";
-import Classes from "./components/Classes";
-import Reviews from "./components/Reviews";
-import Register from "./components/Register";
+import About from "./components/yichensStuff/About";
+import Header from "./components/yichensStuff/Header";
+import LightRays from "./components/yichensStuff/LightRays";
+import Navigation from "./components/yichensStuff/Navigation";
+import Classes from "./components/yichensStuff/Classes";
+import Reviews from "./components/yichensStuff/Reviews";
+import Register from "./components/yichensStuff/Register";
 export default function App() {
   return (
     <div>
@@ -26,7 +26,7 @@ export default function App() {
             <Reviews />
           </div>
           <div id="registration">
-            <Register/>
+            <Register />
           </div>
         </div>
       </div>

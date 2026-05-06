@@ -1,7 +1,7 @@
 "use client";
 import { motion, easeOut } from "framer-motion";
 import SpotlightCard from "./SpotlightCard";
-import fivestars from "../assets/5_stars.png";
+import fivestars from "../../assets/5_stars.png";
 
 export default function Reviews() {
   const reviews = [
@@ -42,13 +42,15 @@ export default function Reviews() {
 
   return (
     <div className="px-8 lg:px-16 xl:px-24 ">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ ease: "easeOut", duration: 0.5, delay: 0.25 }}
         viewport={{ once: true }}
       >
-        <div className="font-bold text-4xl lg:text-5xl xl:text-6xl text-center mb-8">Reviews</div>
+        <div className="font-bold text-4xl lg:text-5xl xl:text-6xl text-center mb-8">
+          Reviews
+        </div>
       </motion.div>
 
       <motion.div

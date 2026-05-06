@@ -1,34 +1,105 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Question } from "../../types/form/question";
+import type { SelectQuestionResponseType } from "../../pages/CourseFormPage";
 
-export default function SelectQuestion({ question }: { question: Question }) {
-  const [selected, setSelected] = useState<string[]>(
-    question.choices?.filter(() => false) ?? [],
-  );
-  const [otherValue, setOtherValue] = useState("");
+interface SelectQuestionProp {
+  question: Question;
+  default_value: SelectQuestionResponseType;
+  setAnswers: React.Dispatch<
+    React.SetStateAction<Record<string, SelectQuestionResponseType>>
+  >;
+}
 
+export default function SelectQuestion({
+  question,
+  default_value,
+  setAnswers,
+}: SelectQuestionProp) {
   if (question.type !== "select" || !question.choices) return null;
 
+  const [selected, setSelected] = useState<string[]>(
+    default_value?.selected ?? [],
+  );
+
+  const [otherValue, setOtherValue] = useState<string>(
+    default_value?.other ?? "",
+  );
+
+  // ✅ keep local state in sync if default changes
+  useEffect(() => {
+    setSelected(default_value?.selected ?? []);
+    setOtherValue(default_value?.other ?? "");
+  }, [default_value]);
+
+  // ✅ sync to global state
+  const syncState = (updatedSelected: string[], other?: string) => {
+    setAnswers((prev) => ({
+      ...prev,
+      [question.question]: {
+        selected: updatedSelected,
+        other: other ?? null,
+      },
+    }));
+  };
+
+  // -----------------------
+  // TOGGLE CHOICE
+  // -----------------------
   const toggleChoice = (choice: string) => {
-    setSelected((prev) =>
-      prev.includes(choice)
+    setSelected((prev) => {
+      const updated = prev.includes(choice)
         ? prev.filter((c) => c !== choice)
-        : [...prev, choice],
-    );
+        : [...prev, choice];
+
+      syncState(updated, otherValue);
+      return updated;
+    });
   };
 
+  // -----------------------
+  // OTHER VALUE
+  // -----------------------
+  const handleOtherValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value;
+
+    setOtherValue(val);
+
+    const updated = selected.includes("other")
+      ? selected
+      : [...selected, "other"];
+
+    setSelected(updated);
+    syncState(updated, val);
+  };
+
+  // -----------------------
+  // TOGGLE OTHER
+  // -----------------------
   const toggleOther = () => {
-    if (selected.includes("other")) {
-      setSelected((prev) => prev.filter((c) => c !== "other"));
-      setOtherValue("");
-    } else {
-      setSelected((prev) => [...prev, "other"]);
-    }
+    setSelected((prev) => {
+      let updated: string[];
+
+      if (prev.includes("other")) {
+        updated = prev.filter((c) => c !== "other");
+        setOtherValue("");
+        syncState(updated, "");
+      } else {
+        updated = [...prev, "other"];
+        syncState(updated, otherValue);
+      }
+
+      return updated;
+    });
   };
 
+  // -----------------------
+  // UI
+  // -----------------------
   return (
     <section className="space-y-md">
-      <p className="font-body-lg text-on-surface">{question.question}</p>
+      <p className="font-body-lg text-on-surface">
+        {question.question} {question.optional ? " *" : ""}
+      </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {question.choices.map((choice, idx) => (
@@ -62,7 +133,7 @@ export default function SelectQuestion({ question }: { question: Question }) {
               <input
                 type="text"
                 value={otherValue}
-                onChange={(e) => setOtherValue(e.target.value)}
+                onChange={handleOtherValue}
                 placeholder={question.placeholder || "Please specify"}
                 className="mt-2 p-2 rounded-md bg-surface-dim border border-white/10 text-on-surface outline-none focus:ring-1 focus:ring-primary-container"
               />

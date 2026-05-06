@@ -1,17 +1,37 @@
 import { useParams } from "react-router";
 import { Nav } from "../components/courses/CoursesTopNav";
 import FormHeader from "../components/form/FormHeader";
-import Footer from "../components/Footer";
+import Footer from "../components/yichensStuff/Footer";
 import QuestionBox from "../components/form/Question";
 import SelectQuestion from "../components/form/SelectQuestion";
 import type { Form } from "../types/form/form";
 import { getFormById } from "../database/utils";
+import { useState } from "react";
+import type { Question } from "../types/form/question";
+
+export type SelectQuestionResponseType = {
+  selected: string[];
+  other?: string;
+};
 
 export default function CourseFormPage() {
   const params = useParams();
-  const formId = params.formId;
+  const [currentPageIndex, setCurrentPageIndex] = useState(0);
+  const formId = params.slug;
 
   const form: Form | undefined = formId ? getFormById(formId) : undefined;
+
+  const currentPage = form.pages[currentPageIndex];
+  const isLastPage = currentPageIndex === form.pages.length - 1;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(answers);
+  };
+
+  const [answers, setAnswers] = useState<
+    Record<string, string | SelectQuestionResponseType>
+  >({});
 
   if (!form) {
     return <div className="p-10 text-white">Form not found</div>;
@@ -28,42 +48,75 @@ export default function CourseFormPage() {
           <div className="glass-panel rounded-xl p-md md:p-lg shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 alchemy-gradient"></div>
 
-            <form className="space-y-lg">
-              {form.pages.map((page) => (
-                <div key={page.page_number} className="space-y-6">
-                  {page.header && (
-                    <h2 className="text-lg font-semibold text-on-surface">
-                      {page.header}
-                    </h2>
-                  )}
+            <form className="space-y-lg" onSubmit={handleSubmit}>
+              <div className="space-y-6">
+                {currentPage.header && (
+                  <h2 className="text-lg font-semibold text-on-surface">
+                    {currentPage.header}
+                  </h2>
+                )}
 
-                  {page.questions.map((question, idx) => {
-                    if (question.type === "select") {
-                      return <SelectQuestion key={idx} question={question} />;
-                    }
+                {currentPage.questions.map((question, idx) => {
+                  if (question.type === "select") {
+                    return (
+                      <SelectQuestion
+                        key={idx}
+                        question={question}
+                        default_value={
+                          (answers[
+                            question.question
+                          ] as SelectQuestionResponseType) ?? {
+                            selected: [],
+                          }
+                        }
+                        setAnswers={setAnswers}
+                      />
+                    );
+                  }
 
-                    return <QuestionBox key={idx} question={question} />;
-                  })}
-                </div>
-              ))}
+                  return (
+                    <QuestionBox
+                      key={idx}
+                      question={question}
+                      default_value={
+                        (answers[question.question] as string) || ""
+                      }
+                      setAnswers={setAnswers}
+                    />
+                  );
+                })}
+              </div>
 
               <div className="pt-8 flex flex-col md:flex-row gap-4 items-center justify-end">
-                <button
-                  className="w-full md:w-auto px-8 py-3 rounded-xl border border-white/20 text-on-surface-variant font-semibold hover:bg-white/5 transition-all active:scale-95"
-                  type="button"
-                >
-                  Cancel
-                </button>
+                {currentPageIndex > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => setCurrentPageIndex((prev) => prev - 1)}
+                    className="w-full md:w-auto px-8 py-3 rounded-xl border border-white/20 text-on-surface-variant font-semibold hover:bg-white/5 transition-all active:scale-95"
+                  >
+                    Back
+                  </button>
+                )}
 
-                <button
-                  className="w-full md:w-auto px-12 py-3 rounded-xl bg-secondary-container text-white font-bold neon-glow-blue transition-all active:scale-95 flex items-center justify-center gap-2"
-                  type="submit"
-                >
-                  Submit
-                  <span className="material-symbols-outlined text-sm">
-                    send
-                  </span>
-                </button>
+                {!isLastPage ? (
+                  <button
+                    type="button"
+                    onClick={() => setCurrentPageIndex((prev) => prev + 1)}
+                    className="w-full md:w-auto px-12 py-3 rounded-xl bg-secondary-container text-white font-bold neon-glow-blue transition-all active:scale-95"
+                  >
+                    Next
+                  </button>
+                ) : (
+                  <button
+                    type="submit"
+                    className="w-full md:w-auto px-12 py-3 rounded-xl bg-secondary-container text-white font-bold neon-glow-blue transition-all active:scale-95 flex items-center justify-center gap-2"
+                  >
+                    Submit
+                    <span className="material-symbols-outlined text-sm">
+                      send
+                    </span>
+                  </button>
+                )}
               </div>
             </form>
           </div>

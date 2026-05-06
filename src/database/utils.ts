@@ -26,3 +26,13 @@ export function getFormById(id: string): Form {
 
   return form;
 }
+
+export function getFormBySlug(slug: string): Form {
+  const form = FORMS.find((t) => t.slug === slug);
+
+  if (!form) {
+    throw new Error(`Form with slug "${slug}" not found`);
+  }
+
+  return form;
+}

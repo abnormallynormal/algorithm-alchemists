@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "../../public/favicon.png";
+import logo from "../../../public/favicon.png";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -155,7 +155,7 @@ export default function Navigation() {
             Contact
           </a>
           <a
-            href="/sign-up"
+            href="/discover"
             className="text-white hover:text-gray-300 transition-colors"
           >
             <button className="bg-white text-purple-900 px-3 lg:px-4 py-1.5 lg:py-2 text-sm lg:text-lg font-bold rounded-3xl transition-all duration-300 shadow-lg transform hover:scale-105">
@@ -238,7 +238,7 @@ export default function Navigation() {
             Contact
           </a>
           <a
-            href="/courses"
+            href="/discover"
             className="text-white hover:text-gray-300 transition-colors"
             onClick={() => setIsMobileMenuOpen(false)}
           >

@@ -1,4 +1,4 @@
-import Footer from "../components/Footer";
+import Footer from "../components/yichensStuff/Footer";
 import BackgroundEffects from "../forms/BackgroundEffects";
 import SignupForm from "../forms/Form";
 import Navbar from "../forms/formNavBar";

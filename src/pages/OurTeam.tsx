@@ -1,5 +1,5 @@
-import LightRays from "../components/LightRays";
-import Navigation from "../components/Navigation";
+import LightRays from "../components/yichensStuff/LightRays";
+import Navigation from "../components/yichensStuff/Navigation";
 import { motion } from "motion/react";
 import brandonLam from "../assets/pfps/brandon lam.avif";
 import brianGe from "../assets/pfps/brian ge.avif";
@@ -22,9 +22,9 @@ import garyFu from "../assets/pfps/gary fu.avif";
 import weizhongXia from "../assets/pfps/weizhong xia.avif";
 import yichenXiao from "../assets/pfps/yichen xiao.avif";
 import zongqiaoZhou from "../assets/pfps/zongqiao zhou.avif";
-import EmblaCarousel from "../components/EmblaCarousel";
-import SpotlightCard from "../components/SpotlightCard";
-import Footer from "../components/Footer";
+import EmblaCarousel from "../components/yichensStuff/EmblaCarousel";
+import SpotlightCard from "../components/yichensStuff/SpotlightCard";
+import Footer from "../components/yichensStuff/Footer";
 
 export default function OurTeam() {
   return (

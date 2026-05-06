@@ -3,10 +3,16 @@ import type { Question } from "../../types/form/question";
 
 interface QuestionBoxProp {
   question: Question;
+  default_value: string;
+  setAnswers: React.Dispatch<React.SetStateAction<Record<string, string>>>;
 }
 
-export default function QuestionBox({ question }: QuestionBoxProp) {
-  const [value, setValue] = useState("");
+export default function QuestionBox({
+  question,
+  default_value,
+  setAnswers,
+}: QuestionBoxProp) {
+  const [value, setValue] = useState(default_value);
 
   const charLimit = question.characterLimit;
   const wordLimit = question.wordLimit;
@@ -30,6 +36,10 @@ export default function QuestionBox({ question }: QuestionBoxProp) {
     }
 
     setValue(input);
+    setAnswers((prev) => ({
+      ...prev,
+      [question.question]: e.target.value,
+    }));
   };
 
   return (
@@ -37,7 +47,7 @@ export default function QuestionBox({ question }: QuestionBoxProp) {
       <div className="space-y-2">
         <label className="block">
           <span className="text-label-caps text-on-surface-variant mb-2 block">
-            {question.question}
+            {question.question} {question.optional ? " *" : ""}
           </span>
 
           <textarea

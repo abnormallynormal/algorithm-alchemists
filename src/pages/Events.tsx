@@ -1,6 +1,6 @@
-import LightRays from "../components/LightRays";
-import Navigation from "../components/Navigation";
-import Footer from "../components/Footer";
+import LightRays from "../components/yichensStuff/LightRays";
+import Navigation from "../components/yichensStuff/Navigation";
+import Footer from "../components/yichensStuff/Footer";
 import { motion } from "motion/react";
 import img1 from "../assets/event-pics/img1.jpg";
 import img2 from "../assets/event-pics/img2.jpg";

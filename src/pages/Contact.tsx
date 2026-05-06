@@ -1,6 +1,6 @@
-import LightRays from "../components/LightRays";
-import Navigation from "../components/Navigation";
-import Footer from "../components/Footer";
+import LightRays from "../components/yichensStuff/LightRays";
+import Navigation from "../components/yichensStuff/Navigation";
+import Footer from "../components/yichensStuff/Footer";
 
 export default function Contact() {
   return (
@@ -18,7 +18,8 @@ export default function Contact() {
           </div>
           <div className="max-w-3xl mx-auto text-sm lg:text-md leading-relaxed text-center">
             <p className="mb-6">
-              For general inquiries, partnership opportunities, or questions about our programs, reach out via email.
+              For general inquiries, partnership opportunities, or questions
+              about our programs, reach out via email.
             </p>
             <div className="flex justify-center mb-8">
               <a
@@ -26,12 +27,15 @@ export default function Contact() {
                 className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-4 rounded-xl border border-white/20 transition-all duration-300"
               >
                 <span className="font-semibold">Email us</span>
-                <span className="text-sm opacity-80">algorithm.alchemists@gmail.com</span>
+                <span className="text-sm opacity-80">
+                  algorithm.alchemists@gmail.com
+                </span>
               </a>
             </div>
             <div className="mb-8">
               <p className="mb-4">
-                Interested in volunteering with Algorithm Alchemists? Fill out our volunteer form and we will be in touch.
+                Interested in volunteering with Algorithm Alchemists? Fill out
+                our volunteer form and we will be in touch.
               </p>
               <a
                 href="https://forms.gle/smo5FH8unWtaScy57"
