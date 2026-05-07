@@ -57,7 +57,9 @@ export default function OnboardingStep({
     <main className="min-h-screen flex items-center justify-center bg-background text-on-background px-6 py-12">
       <div className="max-w-3xl w-full">
         {/* Progress */}
-        <ProgressBar pageNumber={pageNumber} total={totalSteps} />
+        {pageNumber !== 0 && (
+          <ProgressBar pageNumber={pageNumber} total={totalSteps} />
+        )}
 
         {/* Card */}
         <OnboardingStepWrapper stepId={title}>

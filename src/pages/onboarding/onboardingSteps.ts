@@ -5,8 +5,8 @@ export const onboardingSteps: OnboardingSteps = {
   // 1. ROLE SELECTION
   // ======================
   role_selection: {
-    pageNumber: 1,
-    totalSteps: 6,
+    pageNumber: 0,
+    totalSteps: 0,
     title: "Who is learning to code?",
     subtitle: "Choose the path that fits your journey.",
     options: [
@@ -35,8 +35,8 @@ export const onboardingSteps: OnboardingSteps = {
   // ======================
 
   student_goal: {
-    pageNumber: 2,
-    totalSteps: 6,
+    pageNumber: 1,
+    totalSteps: 3,
     role: "student",
     title: "What do you want to build or achieve?",
     subtitle: "We’ll recommend the best learning path based on your goal.",
@@ -60,8 +60,8 @@ export const onboardingSteps: OnboardingSteps = {
   },
 
   student_skill: {
-    pageNumber: 3,
-    totalSteps: 6,
+    pageNumber: 2,
+    totalSteps: 3,
     role: "student",
     title: "How much coding experience do you have?",
     subtitle: "This helps us adjust difficulty.",
@@ -76,8 +76,8 @@ export const onboardingSteps: OnboardingSteps = {
   },
 
   student_recommendation: {
-    pageNumber: 4,
-    totalSteps: 6,
+    pageNumber: 3,
+    totalSteps: 3,
     role: "student",
     type: "recommendation",
     title: "Recommended for you",
@@ -103,33 +103,33 @@ export const onboardingSteps: OnboardingSteps = {
     previous: "student_skill",
   },
 
-  student_preview: {
-    pageNumber: 5,
-    totalSteps: 6,
-    role: "student",
-    title: "Try your first lesson",
-    subtitle: "Write your first program in under 5 minutes.",
-    cta: "Start free lesson",
-    next: "student_signup",
-    previous: "student_recommendation",
-  },
+  // student_preview: {
+  //   pageNumber: 5,
+  //   totalSteps: 6,
+  //   role: "student",
+  //   title: "Try your first lesson",
+  //   subtitle: "Write your first program in under 5 minutes.",
+  //   cta: "Start free lesson",
+  //   next: "student_signup",
+  //   previous: "student_recommendation",
+  // },
 
-  student_signup: {
-    pageNumber: 6,
-    totalSteps: 6,
-    role: "student",
-    title: "Create your account",
-    subtitle: "Save progress and track your learning journey.",
-    previous: "student_preview",
-  },
+  // student_signup: {
+  //   pageNumber: 6,
+  //   totalSteps: 6,
+  //   role: "student",
+  //   title: "Create your account",
+  //   subtitle: "Save progress and track your learning journey.",
+  //   previous: "student_preview",
+  // },
 
   // ======================
   // PARENT FLOW
   // ======================
 
   parent_child_profile: {
-    pageNumber: 2,
-    totalSteps: 6,
+    pageNumber: 1,
+    totalSteps: 5,
     role: "parent",
     title: "How old is your child?",
     subtitle: "This helps us match the right difficulty level.",
@@ -146,8 +146,8 @@ export const onboardingSteps: OnboardingSteps = {
   },
 
   parent_experience: {
-    pageNumber: 3,
-    totalSteps: 6,
+    pageNumber: 2,
+    totalSteps: 5,
     role: "parent",
     title: "Does your child have any coding experience?",
     subtitle: "No problem if they’re just starting out.",
@@ -163,12 +163,12 @@ export const onboardingSteps: OnboardingSteps = {
     ],
 
     next: "parent_interests",
-    previous: "parent_age",
+    previous: "parent_child_profile",
   },
 
   parent_interests: {
-    pageNumber: 4,
-    totalSteps: 6,
+    pageNumber: 3,
+    totalSteps: 5,
     role: "parent",
     title: "What is your child interested in?",
     subtitle: "We’ll tailor lessons around what excites them most.",
@@ -185,8 +185,8 @@ export const onboardingSteps: OnboardingSteps = {
   },
 
   parent_goal: {
-    pageNumber: 5,
-    totalSteps: 6,
+    pageNumber: 4,
+    totalSteps: 5,
     role: "parent",
     title: "What’s your goal?",
     subtitle: "What do you want your child to achieve?",
@@ -213,8 +213,8 @@ export const onboardingSteps: OnboardingSteps = {
   },
 
   parent_paths: {
-    pageNumber: 6,
-    totalSteps: 6,
+    pageNumber: 5,
+    totalSteps: 5,
     role: "parent",
     title: "Structured learning paths",
     subtitle: "Choose a guided curriculum",
