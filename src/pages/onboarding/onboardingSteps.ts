@@ -209,7 +209,7 @@ export const onboardingSteps: OnboardingSteps = {
       { id: "advanced", title: "Advanced CS learning", icon: "rocket_launch" },
     ],
     next: "parent_paths",
-    previous: "parent_child_profile",
+    previous: "parent_interests",
   },
 
   parent_paths: {

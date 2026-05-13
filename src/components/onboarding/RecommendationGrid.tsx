@@ -19,7 +19,7 @@ export function RecommendationGrid({ items }: Props) {
       {items.map((item, i) => (
         <RecommendationCard
           index={i}
-          key={item.course.id}
+          key={`${item.course.id}-${i}`}
           course={item.course}
           badge={item.badge}
           badgeColor={item.badgeColor}
