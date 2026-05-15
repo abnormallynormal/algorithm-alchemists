@@ -1,8 +1,55 @@
 import { useEffect, useMemo, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import CourseCard from "../components/courses/CourseCard";
 import { Nav } from "../components/courses/CoursesTopNav";
 import { COURSES_DB } from "../database/courses";
 import TagDropdown from "../components/courses/TagDropdown";
+
+const pageEase = [0.22, 1, 0.36, 1] as const;
+
+const staggerPage = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.25,
+    },
+  },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 18 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.42, ease: pageEase },
+  },
+};
+
+const gridStagger = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.6,
+    },
+  },
+};
+
+const cardItem = {
+  hidden: { opacity: 0, y: 16, scale: 0.98 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.38, ease: pageEase },
+  },
+  exit: {
+    opacity: 0,
+    scale: 0.96,
+    transition: { duration: 0.22, ease: pageEase },
+  },
+};
 
 export default function CourseListPage() {
   const [selectedFilter, setSelectedFilter] = useState("All");
@@ -48,17 +95,30 @@ export default function CourseListPage() {
   return (
     <>
       <Nav />
-      <main className="pt-32 px-8 pb-16">
-        <div className="max-w-7xl mx-auto">
+      <motion.main
+        className="pt-32 px-8 pb-16"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.35, ease: pageEase }}
+      >
+        <motion.div
+          className="max-w-7xl mx-auto"
+          variants={staggerPage}
+          initial="hidden"
+          animate="show"
+        >
           {/* HEADER */}
-          <header className="mb-12">
+          <motion.header className="mb-12" variants={fadeUp}>
             <h1 className="font-h1 text-h1 text-on-surface mb-4">
               Explore Courses
             </h1>
-          </header>
+          </motion.header>
 
           {/* FILTER + SORT BAR */}
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-10 pb-6 border-b border-white/5">
+          <motion.div
+            className="flex flex-wrap items-center justify-between gap-4 mb-10 pb-6 border-b border-white/5"
+            variants={fadeUp}
+          >
             {/* LEFT SIDE: TAG + SEARCH */}
             <div className="flex items-center gap-4 flex-wrap">
               <TagDropdown
@@ -97,16 +157,33 @@ export default function CourseListPage() {
                 </span>
               </span>
             </div>
-          </div>
+          </motion.div>
 
           {/* COURSE GRID */}
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter">
-            {sortedCourses.map((course) => (
-              <CourseCard key={course.id} course={course} />
-            ))}
-          </div>
-        </div>
-      </main>
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter"
+            variants={gridStagger}
+            initial="hidden"
+            animate="show"
+          >
+            <AnimatePresence mode="popLayout">
+              {sortedCourses.map((course) => (
+                <motion.div
+                  key={course.id}
+                  layout
+                  variants={cardItem}
+                  initial="hidden"
+                  animate="show"
+                  exit="exit"
+                  className="min-h-0"
+                >
+                  <CourseCard course={course} />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+        </motion.div>
+      </motion.main>
     </>
   );
 }

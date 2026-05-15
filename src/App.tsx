@@ -5,6 +5,7 @@ import Navigation from "./components/yichensStuff/Navigation";
 import Classes from "./components/yichensStuff/Classes";
 import Reviews from "./components/yichensStuff/Reviews";
 import Register from "./components/yichensStuff/Register";
+
 export default function App() {
   return (
     <div>

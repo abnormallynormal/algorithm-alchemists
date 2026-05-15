@@ -1,35 +1,8 @@
+import { Link } from "react-router";
 import { OnboardingStepWrapper } from "../../pages/onboarding/OnboardingStepWrapper";
+import ProgressBar from "./ProgressBar";
 import OptionCard from "./QuestionaireOption";
 import { motion } from "framer-motion";
-
-function ProgressBar({ pageNumber = 1, total = 3 }) {
-  return (
-    <div className="mb-12 flex justify-center items-center gap-3">
-      {Array.from({ length: total }).map((_, i) => {
-        const active = i < pageNumber;
-
-        return (
-          <div
-            key={i}
-            className="h-1 w-16 rounded-full bg-surface-container-highest overflow-hidden"
-          >
-            <motion.div
-              className="h-full rounded-full bg-primary-container"
-              initial={false}
-              animate={{
-                width: active ? "100%" : "0%",
-              }}
-              transition={{
-                duration: 0.35,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-            />
-          </div>
-        );
-      })}
-    </div>
-  );
-}
 
 const container = {
   hidden: { opacity: 0 },
@@ -54,8 +27,8 @@ export default function OnboardingStep({
   displayPrevious,
 }) {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-background text-on-background px-6 py-12">
-      <div className="max-w-3xl w-full">
+    <main className="min-h-full flex items-center justify-center bg-background text-on-background px-6 py-12">
+      <div className="max-w-3xl w-full pt-24">
         {/* Progress */}
         {pageNumber !== 0 && (
           <ProgressBar pageNumber={pageNumber} total={totalSteps} />
@@ -91,15 +64,24 @@ export default function OnboardingStep({
             </motion.div>
 
             {/* Navigation */}
-            <div className="mt-12 flex flex-col sm:flex-row justify-between gap-4 border-t border-white/5 pt-8">
-              {displayPrevious && (
-                <button
-                  onClick={onPrevious}
-                  className="w-full sm:w-auto px-8 py-3 rounded-xl border border-outline/30 text-on-surface-variant font-medium hover:bg-white/5 transition-all active:scale-95"
-                >
-                  Go Back
-                </button>
-              )}
+            <div className="mt-12 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-t border-white/5 pt-8">
+              <div>
+                {displayPrevious && (
+                  <button
+                    onClick={onPrevious}
+                    className="w-full sm:w-auto px-8 py-3 rounded-xl border border-outline/30 text-on-surface-variant font-medium hover:bg-white/5 transition-all active:scale-95"
+                  >
+                    Go Back
+                  </button>
+                )}
+              </div>
+
+              <Link
+                to="/courses"
+                className="text-tertiary/80 hover:text-tertiary underline transition"
+              >
+                View all courses
+              </Link>
             </div>
           </div>
         </OnboardingStepWrapper>
