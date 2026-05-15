@@ -103,6 +103,11 @@ export default function OurTeam() {
                 image: patrickZhang,
               },
               {
+                name: "Ethan Guan",
+                title: "Vice-President / Senior Class Teacher",
+                image: ethanGuan,
+              },
+              {
                 name: "Jeffrey Wang",
                 title:
                   "Vice-President & Founder / Junior Class Lead / Outreach Coordinator",
@@ -138,11 +143,7 @@ export default function OurTeam() {
                   "Canadian Computing Competition (CCC) Senior Division Distinction",
                 image: yichenXiao,
               },
-              {
-                name: "Ethan Guan",
-                title: "Senior Class Teacher",
-                image: ethanGuan,
-              },
+
               {
                 name: "Justin Wen Hao Wu",
                 title: "Senior Class Teacher",
