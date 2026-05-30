@@ -1,4 +1,4 @@
-import type { Tag } from "../types/course";
+import type { Tag } from "../types/tag";
 
 export const TAGS_DB: Record<string, Tag> = {
   Beginner: {
