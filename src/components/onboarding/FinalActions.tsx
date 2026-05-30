@@ -2,7 +2,11 @@
 
 import { Link } from "react-router";
 
-export function FinalActions() {
+interface Props {
+  onPrevious: () => void;
+}
+
+export function FinalActions({ onPrevious }: Props) {
   return (
     <div className="flex w-full max-w-xs flex-col items-center gap-6">
       <Link
@@ -12,12 +16,12 @@ export function FinalActions() {
         View all courses
       </Link>
 
-      <Link
-        to="/discover"
+      <button
+        onClick={onPrevious}
         className="border-b border-transparent text-on-surface-variant transition-colors hover:border-primary hover:text-primary"
       >
         Review Selections
-      </Link>
+      </button>
     </div>
   );
 }

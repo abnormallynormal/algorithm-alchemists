@@ -57,15 +57,15 @@ export default function CourseCard({ course }: CourseCardProp) {
         </div>
 
         {/* SCHEDULE INFO */}
-        <div className="text-xs text-slate-400 mb-4 space-y-2">
-          {/* DAY + TIME */}
+        {/* <div className="text-xs text-slate-400 mb-4 space-y-2">
+          DAY + TIME
           <div>
             <span className="text-slate-300 font-medium">Schedule:</span>{" "}
             {course.reccursEvery} {course.courseWeekDay},{" "}
             {course.courseTimeStart} – {course.courseTimeEnd}
           </div>
 
-          {/* DATES */}
+          DATES
           <div className="pt-2">
             <div>
               <span className="text-slate-300 font-medium">Start:</span>{" "}
@@ -77,10 +77,10 @@ export default function CourseCard({ course }: CourseCardProp) {
               {course.endDate}
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* INSTRUCTORS */}
-        <div className="text-xs text-slate-400 flex items-center gap-3 mb-6 flex-wrap">
+        <div className="text-xs text-slate-400 pt-4 flex items-center gap-3 mb-6 flex-wrap">
           Instructors:{" "}
           {course.instructors.map((i, index) => (
             <div key={index} className="flex items-center">

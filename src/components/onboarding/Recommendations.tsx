@@ -1,6 +1,7 @@
 // components/onboarding/recommendation-card.tsx
 import { motion } from "framer-motion";
 import type { Course } from "../../types/course";
+import logo from "../../../public/favicon.png";
 
 interface Props {
   index: number;
@@ -31,7 +32,6 @@ const colorClasses = {
   },
 };
 
-// 1. Destructure the 'index' prop here
 export function RecommendationCard({
   index,
   course,
@@ -43,13 +43,8 @@ export function RecommendationCard({
 
   return (
     <motion.div
-      // 2. Add initial and animate (or whileInView) triggers
       initial="hidden"
       animate="show"
-      // If you only want it to animate when scrolled into view, replace `animate="show"` with:
-      // whileInView="show"
-      // viewport={{ once: true, margin: "0px 0px -50px 0px" }}
-
       variants={{
         hidden: {
           opacity: 0,
@@ -60,7 +55,7 @@ export function RecommendationCard({
           y: 0,
           transition: {
             duration: 0.77,
-            delay: index * 0.25, // 3. Use the index to stagger the animation
+            delay: index * 0.25,
             ease: [0.22, 1, 0.36, 1],
           },
         },
@@ -71,7 +66,8 @@ export function RecommendationCard({
           duration: 0.25,
         },
       }}
-      className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-[rgba(22,18,43,0.72)] p-6 backdrop-blur-xl transition-shadow duration-300 ${colors.glow}`}
+      /* Added 'flex flex-col' here to allow alignment calculation */
+      className={`group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-[rgba(22,18,43,0.72)] p-6 backdrop-blur-xl transition-shadow duration-300 ${colors.glow}`}
     >
       {/* Animated glow orb */}
       <motion.div
@@ -89,14 +85,23 @@ export function RecommendationCard({
 
       {/* Image */}
       <div className="relative mb-6 h-40 overflow-hidden rounded-xl bg-surface-container-low">
-        <motion.img
-          whileHover={{ scale: 1.08 }}
-          transition={{ duration: 0.6 }}
-          src={course.image}
-          alt={course.title}
-          className="h-full w-full object-cover opacity-80"
-        />
-
+        {course.image ? (
+          <motion.img
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 absolute inset-0 z-0"
+            src={course.image}
+            whileHover={{ scale: 1.08 }}
+            transition={{ duration: 0.6 }}
+            alt={course.title}
+          />
+        ) : (
+          <motion.img
+            whileHover={{ scale: 1.08 }}
+            transition={{ duration: 0.6 }}
+            alt={course.title}
+            src={logo}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 absolute inset-0 z-0"
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
       </div>
 
@@ -117,7 +122,6 @@ export function RecommendationCard({
         >
           {icon}
         </motion.span>
-
         <span
           className={`text-xs font-semibold uppercase tracking-[0.12em] ${colors.text}`}
         >
@@ -131,31 +135,24 @@ export function RecommendationCard({
       </h3>
 
       {/* Description */}
-      <p className="mb-6 text-on-surface-variant">{course.description}</p>
+      {/* Added 'mb-8' to ensure breathing room above the button if the description gets long */}
+      <p className="mb-8 text-on-surface-variant">{course.description}</p>
 
-      {/* Meta */}
-      <div className="mb-8 space-y-1 text-sm text-on-surface-variant">
-        <p>
-          Session {course.currentSession} / {course.totalSessions}
-        </p>
+      {/* Meta (Commented out) */}
 
-        <p>
-          {course.courseWeekDay} • {course.courseTimeStart} —{" "}
-          {course.courseTimeEnd}
-        </p>
-
-        <p>
-          {course.startDate} → {course.endDate}
-        </p>
-      </div>
-
-      {/* CTA */}
+      {/* CTA Button */}
+      {/* Changed layout from absolute positioning to 'mt-auto w-full' */}
       <motion.button
         whileTap={{ scale: 0.97 }}
         whileHover={{ scale: 1.02 }}
-        className={`w-full rounded-xl border bg-surface-container-highest py-3 font-semibold transition-all duration-300 ${colors.text} ${colors.border} ${colors.hover}`}
+        className={`mt-auto w-full rounded-xl border bg-surface-container-highest py-3 font-semibold transition-all duration-300 ${colors.text} ${colors.border} ${colors.hover}`}
       >
-        <a href={course.link} target="_blank" className="text-slate-300">
+        <a
+          href={course.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-full text-slate-300"
+        >
           Start Learning
         </a>
       </motion.button>

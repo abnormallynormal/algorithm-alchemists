@@ -6,7 +6,11 @@ import { FinalActions } from "./FinalActions";
 import { useOnboardingAnswersStore } from "../../stores/onboardingAnswersStore";
 import { buildRecommendationsFromAnswers } from "../../lib/onboardingCourseRecommendations";
 
-export default function RecommendationPathways() {
+interface Props {
+  onPrevious: () => void;
+}
+
+export default function RecommendationPathways({ onPrevious }: Props) {
   const answers = useOnboardingAnswersStore((s) => s.answers);
   const recommendations = useMemo(
     () => buildRecommendationsFromAnswers(answers),
@@ -60,7 +64,7 @@ export default function RecommendationPathways() {
           delay: 0.9,
         }}
       >
-        <FinalActions />
+        <FinalActions onPrevious={onPrevious} />
       </motion.div>
     </div>
   );

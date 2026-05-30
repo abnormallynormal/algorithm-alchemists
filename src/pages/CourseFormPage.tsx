@@ -7,7 +7,6 @@ import SelectQuestion from "../components/form/SelectQuestion";
 import type { Form } from "../types/form/form";
 import { getFormById } from "../database/utils";
 import { useState } from "react";
-import type { Question } from "../types/form/question";
 
 export type SelectQuestionResponseType = {
   selected: string[];

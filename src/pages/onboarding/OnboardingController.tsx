@@ -40,7 +40,7 @@ export default function OnboardingController() {
           displayPrevious={step.previous}
         />
       ) : (
-        <RecommendationPathways />
+        <RecommendationPathways onPrevious={() => setStepId(step.previous)} />
       )}
 
       <BetterFooter />
