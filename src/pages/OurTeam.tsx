@@ -98,11 +98,14 @@ export default function OurTeam() {
           <EmblaCarousel
             slides={[
               {
-                name: "Eric Wang",
-                title: "President & Founder",
-                description:
-                  "United States of America Computing Olympiad (USACO) Silver Division",
-                image: ericWangPfp,
+                name: "Patrick Zhang",
+                title: "President / Web Development Teacher",
+                image: patrickZhang,
+              },
+              {
+                name: "Ethan Guan",
+                title: "Vice-President / Senior Class Teacher",
+                image: ethanGuan,
               },
               {
                 name: "Jeffrey Wang",
@@ -119,6 +122,13 @@ export default function OurTeam() {
                 image: ethanLeung,
               },
               {
+                name: "Eric Wang",
+                title: "Mentor / Former President & Founder",
+                description:
+                  "United States of America Computing Olympiad (USACO) Silver Division",
+                image: ericWangPfp,
+              },
+              {
                 name: "Brian Ge",
                 title:
                   "Senior Class Lead Teacher / Intermediate Teacher / Outreach Coordinator",
@@ -133,22 +143,13 @@ export default function OurTeam() {
                   "Canadian Computing Competition (CCC) Senior Division Distinction",
                 image: yichenXiao,
               },
-              {
-                name: "Ethan Guan",
-                title: "Senior Class Teacher",
-                image: ethanGuan,
-              },
+
               {
                 name: "Justin Wen Hao Wu",
                 title: "Senior Class Teacher",
                 description:
                   "Canadian Computing Competition (CCC) Junior Division Honour Roll",
                 image: justinWu,
-              },
-              {
-                name: "Patrick Zhang",
-                title: "Web Development Teacher",
-                image: patrickZhang,
               },
               {
                 name: "Elina Khan",
